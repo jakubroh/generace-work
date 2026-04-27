@@ -1207,8 +1207,9 @@ a { color: inherit; text-decoration: none; }
         <div class="pillar__body">
           <h3 class="pillar__title"><em class="ital">Udržte si</em> je</h3>
           <p class="pillar__desc">
-            Konkrétní kroky k retenci. Jak snížit fluktuaci, jak vést mezigenerační tým
-            a co dělat, když lidi odcházejí dřív, než se stačí zaučit.
+            Konkrétní kroky k retenci. Jak snížit fluktuaci, vést mezigenerační tým
+            a co dělat, když talenty odcházejí dřív, než stihnou plný onboarding
+            a vy začínáte hledat znova.
           </p>
           <ul class="pillar__tags">
             <li>Strategie</li><li>Konzultace</li><li>Mentoring</li>
@@ -1235,7 +1236,7 @@ a { color: inherit; text-decoration: none; }
         <h2 class="display">Pomáháme tam, kde pracují <em class="ital">mladí.</em></h2>
       </div>
       <p class="section__aside">
-        Šest segmentů, ve kterých máme nejhlubší data. Pokud váš obor mezi nimi není,
+        Šest segmentů, ve kterých máme nejhlubší vhled. Kombinujeme vlastní data ze škol s pozorováním přímo ve firmách. Pokud váš obor mezi nimi není,
         pravděpodobně pro vás máme alespoň relevantní benchmark.
       </p>
     </header>
@@ -1302,7 +1303,7 @@ a { color: inherit; text-decoration: none; }
         <blockquote>
           Než zazvoní není konzultantská značka, která si načetla studie. Jsme lidé,
           kteří 15 let chodí <em class="ital">přímo mezi mladé</em> – do škol, na kampusy, do
-          jejich kanceláří v jejich prvním roce.
+          jejich prvního zaměstnání.
         </blockquote>
         <figcaption>
           <strong>Jakub Roh</strong>
@@ -1416,7 +1417,7 @@ a { color: inherit; text-decoration: none; }
         Pojďme se <em class="ital">pobavit.</em>
       </h2>
       <p class="section__lede">
-        Napište nám pár vět o vaší situaci. Ozveme se do 24 hodin pracovních dní s
+        Napište nám pár vět o vaší situaci. Ozveme se do 24 hodin v pracovních dnech s
         návrhem dalšího kroku – bez prezentačních koleček.
       </p>
 
@@ -1607,7 +1608,7 @@ a { color: inherit; text-decoration: none; }
         const fd = new FormData(form);
         const r = await fetch(form.action, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } });
         if (r.ok) {
-          form.innerHTML = '<div style="padding:32px 12px;text-align:center"><h3 style="font-size:1.5rem;margin-bottom:10px;font-weight:800;letter-spacing:-.01em">Děkujeme!</h3><p style="color:var(--ink-60);line-height:1.6">Zpráva dorazila. Ozveme se do 24 hodin pracovních dní.</p></div>';
+          form.innerHTML = '<div style="padding:32px 12px;text-align:center"><h3 style="font-size:1.5rem;margin-bottom:10px;font-weight:800;letter-spacing:-.01em">Děkujeme!</h3><p style="color:var(--ink-60);line-height:1.6">Zpráva dorazila. Ozveme se do 24 hodin v pracovních dnech.</p></div>';
         } else throw new Error();
       } catch {
         btn.innerHTML = orig; btn.disabled = false;
