@@ -280,7 +280,20 @@
       line-height: 1.7;
       color: rgba(255,255,255,0.75);
       max-width: 620px;
-      margin-bottom: 48px;
+      margin-bottom: 12px;
+    }
+
+    .hero-tagline {
+      font-family: 'Sanchez', serif;
+      font-style: italic;
+      font-size: clamp(0.95rem, 1.6vw, 1.1rem) !important;
+      color: var(--light-blue) !important;
+      margin-bottom: 48px !important;
+      letter-spacing: 0.3px;
+    }
+    .hero-tagline strong {
+      color: var(--white);
+      font-weight: 700;
     }
 
     .btn-primary {
@@ -379,6 +392,23 @@
       max-width: 320px;
     }
 
+    .stats-source {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: rgba(4, 25, 60, 0.55);
+      text-align: center;
+      font-style: italic;
+    }
+    .stats-source a {
+      color: var(--red);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(240, 50, 75, 0.3);
+      transition: border-color 0.2s;
+    }
+    .stats-source a:hover {
+      border-bottom-color: var(--red);
+    }
+
     /* ===== THREE PILLARS ===== */
     #pillars {
       background: var(--navy);
@@ -441,6 +471,46 @@
       font-size: 0.98rem;
       line-height: 1.7;
       color: rgba(255,255,255,0.65);
+    }
+
+    .pillar-services {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .pillar-service-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--orange);
+      background: rgba(255, 160, 0, 0.08);
+      border: 1px solid rgba(255, 160, 0, 0.25);
+      border-radius: 4px;
+      letter-spacing: 0.3px;
+    }
+
+    .why-claim {
+      margin-top: 8px;
+      font-family: 'Sanchez', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--red);
+    }
+
+    .why-infobox {
+      margin-top: 32px;
+      padding: 22px 26px;
+      background: rgba(201, 232, 251, 0.08);
+      border-left: 3px solid var(--orange);
+      border-radius: 4px;
+      font-size: 1rem;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.85);
+    }
+    .why-infobox strong {
+      color: var(--white);
     }
 
     /* ===== PRO KOHO ===== */
@@ -658,6 +728,34 @@
       font-size: 0.95rem;
       color: rgba(255,255,255,0.6);
       line-height: 1.6;
+    }
+
+    .format-list {
+      list-style: none;
+      margin: 14px 0 0;
+      padding: 0;
+    }
+    .format-list li {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.55;
+      padding: 8px 0 8px 16px;
+      position: relative;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .format-list li:first-child {
+      border-top: none;
+    }
+    .format-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--orange);
+      font-weight: 700;
+    }
+    .format-list li strong {
+      color: var(--white);
+      font-weight: 700;
     }
 
     .formats-note {
@@ -926,7 +1024,8 @@
     <div class="hero-content">
       <span class="hero-tag">generace.work</span>
       <h1>Rozumíme generaci,<br>kterou <span class="accent">potřebujete.</span></h1>
-      <p>Pomáháme firmám najít, udržet a vést mladé zaměstnance. 15 let dat. Tisíce proškolených lidí. Nejlepší Gen&nbsp;Z data v&nbsp;Česku.</p>
+      <p>Pomůžeme vám ji pochopit, získat i udržet.</p>
+      <p class="hero-tagline"><strong>Česká data. Český kontext. Česká rozhodnutí.</strong></p>
       <a href="#contact" class="btn-primary">Chci vědět víc</a>
     </div>
   </div>
@@ -965,6 +1064,8 @@
         <p class="stat-text">pracovní síly bude do roku 2030 tvořit generace Z.</p>
       </div>
     </div>
+
+    <p class="stats-source fade-in">Zdroj: vlastní průzkumy Než zazvoní, 2017–2026 · <a href="https://www.nezzazvoni.cz/pruzkumy-a-data/" target="_blank" rel="noopener">nezzazvoni.cz/pruzkumy-a-data</a></p>
   </div>
 </section>
 
@@ -992,16 +1093,27 @@
         <div class="pillar-number">01</div>
         <h3>Pochopte je</h3>
         <p>Najděte s generací Z společnou řeč, zjistěte, co je motivuje a jaká jsou jejich očekávání.</p>
+        <div class="pillar-services">
+          <a href="#formats" class="pillar-service-badge">Keynote</a>
+          <a href="#formats" class="pillar-service-badge">Workshop</a>
+        </div>
       </div>
       <div class="pillar-card">
         <div class="pillar-number">02</div>
         <h3>Získejte je</h3>
         <p>Jak zaujmout nastupující pracovní sílu, kde figurovat, aby si vás všimli a chtěli k vám.</p>
+        <div class="pillar-services">
+          <a href="#formats" class="pillar-service-badge">Workshop</a>
+          <a href="#formats" class="pillar-service-badge">Konzultace</a>
+        </div>
       </div>
       <div class="pillar-card">
         <div class="pillar-number">03</div>
         <h3>Udržte si je</h3>
         <p>Jaké jsou kroky k udržení zaměstnanců, jak snížit fluktuaci a zvýšit motivaci.</p>
+        <div class="pillar-services">
+          <a href="#formats" class="pillar-service-badge">Konzultace</a>
+        </div>
       </div>
     </div>
   </div>
@@ -1078,6 +1190,7 @@
     <div class="fade-in">
       <p class="section-label">Proč my</p>
       <h2 class="section-heading">15 let mezi mladými.<br>To je naše <span class="accent">výhoda.</span></h2>
+      <p class="why-claim fade-in">15 let · 20+ průzkumů · 10 000+ respondentů · 500+ škol</p>
     </div>
 
     <div class="why-grid">
@@ -1101,8 +1214,12 @@
       </div>
 
       <div class="why-quote fade-in">
-        <blockquote>Neučíme z&nbsp;knih. Učíme z&nbsp;dat a z&nbsp;tisíců hodin ve třídách a&nbsp;firmách.</blockquote>
-        <cite>- Než zazvoní, 15 let zkušeností</cite>
+        <blockquote>Učíme z&nbsp;dat a z&nbsp;tisíců hodin ve třídách a&nbsp;firmách — ne z&nbsp;knih.</blockquote>
+        <cite>— Jakub Roh, zakladatel Než zazvoní</cite>
+      </div>
+
+      <div class="why-infobox fade-in">
+        <strong>Od 2017 sbíráme data přímo od desítek tisíc mladých lidí.</strong> Nepřebíráme zahraniční trendy — máme vlastní.
       </div>
     </div>
   </div>
@@ -1141,7 +1258,12 @@
       <div class="format-item">
         <div class="format-tag">Individuální</div>
         <h3>Konzultace</h3>
-        <p>Potřebujete něco jiného? Ozvěte se a připravíme řešení na míru.</p>
+        <p>Přímá práce s vaším týmem nebo vedením. Vyberte si formu, která vám sedí:</p>
+        <ul class="format-list">
+          <li><strong>Strategická konzultace (3 h)</strong> — analýza vaší situace + konkrétní doporučení</li>
+          <li><strong>Employer branding audit (1 den)</strong> — kompletní zhodnocení komunikace navenek</li>
+          <li><strong>Něco jiného?</strong> Ozvěte se a připravíme řešení na míru.</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -1216,7 +1338,7 @@
       </div>
       <div class="footer-links">
         <a href="https://nezzazvoni.cz" target="_blank" rel="noopener">nezzazvoni.cz</a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.linkedin.com/company/nez-zazvoni" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
     <div class="powered-by">Powered by Než zazvoní - 15 let zkušeností ve vzdělávání</div>
@@ -1267,23 +1389,31 @@
     observer.observe(el);
   });
 
-  // ===== CONTACT FORM MAILTO FALLBACK =====
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
+  // ===== CONTACT FORM (Formspree async) =====
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
     e.preventDefault();
-    const name = document.getElementById('name').value;
-    const company = document.getElementById('company').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
+    const form = e.target;
+    const button = form.querySelector('button[type="submit"]');
+    const originalText = button.textContent;
+    button.textContent = 'Odesílám...';
+    button.disabled = true;
 
-    const subject = encodeURIComponent('Poptávka z generace.work - ' + (company || name));
-    const body = encodeURIComponent(
-      'Jméno: ' + name + '\n' +
-      'Firma: ' + company + '\n' +
-      'Email: ' + email + '\n\n' +
-      message
-    );
-
-    window.location.href = 'mailto:info@nezzazvoni.cz?subject=' + subject + '&body=' + body;
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        form.innerHTML = '<div style="padding: 40px 20px; text-align: center; color: var(--navy);"><h3 style="font-size: 1.4rem; margin-bottom: 12px;">Děkujeme!</h3><p>Zpráva dorazila. Ozveme se do 24 hodin.</p></div>';
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (err) {
+      button.textContent = originalText;
+      button.disabled = false;
+      alert('Něco se nepodařilo. Napište nám prosím přímo na info@nezzazvoni.cz.');
+    }
   });
 </script>
 
