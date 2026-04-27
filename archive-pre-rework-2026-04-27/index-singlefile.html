@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>generace.work - Rozumíme generaci, kterou potřebujete</title>
+  <meta name="description" content="Pomáháme firmám najít, udržet a vést mladé zaměstnance. 15 let dat. Tisíce proškolených lidí. Nejlepší Gen Z data v Česku.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800;900&family=Sanchez:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy: #04193c;
+      --red: #f0324b;
+      --light-blue: #c9e8fb;
+      --orange: #ffa000;
+      --white: #ffffff;
+      --black: #000000;
+      --poly-blue: rgba(201, 232, 251, 0.4);
+      --poly-stroke: rgba(201, 232, 251, 0.6);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Gabarito', sans-serif;
+      color: var(--navy);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1, h2, h3, h4 {
+      font-family: 'Gabarito', sans-serif;
+      line-height: 1.15;
+      font-weight: 800;
+    }
+
+    .accent {
+      font-family: 'Sanchez', serif;
+      font-style: italic;
+      color: var(--red);
+    }
+
+    /* ===== LAYOUT ===== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      position: relative;
+    }
+
+    /* ===== FADE-IN ANIMATION ===== */
+    /* JS adds .js-ready to html - without JS, everything is visible */
+    .js-ready .fade-in {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+
+    .js-ready .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Stagger children */
+    .js-ready .fade-in-children > * {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .js-ready .fade-in-children.visible > *:nth-child(1) { transition-delay: 0s; }
+    .js-ready .fade-in-children.visible > *:nth-child(2) { transition-delay: 0.12s; }
+    .js-ready .fade-in-children.visible > *:nth-child(3) { transition-delay: 0.24s; }
+    .js-ready .fade-in-children.visible > *:nth-child(4) { transition-delay: 0.36s; }
+    .js-ready .fade-in-children.visible > *:nth-child(5) { transition-delay: 0.48s; }
+
+    .js-ready .fade-in-children.visible > * {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== POLYGON DECORATIONS ===== */
+    .polygon {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .polygon svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* ===== SECTION DIVIDER - /// strip ===== */
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      overflow: hidden;
+      height: 48px;
+      user-select: none;
+      background: var(--white);
+    }
+
+    .divider-inner {
+      font-family: 'Gabarito', sans-serif;
+      font-weight: 900;
+      font-size: 20px;
+      letter-spacing: 6px;
+      color: var(--light-blue);
+      white-space: nowrap;
+      line-height: 48px;
+    }
+
+    .divider--dark {
+      background: var(--navy);
+    }
+
+    .divider--dark .divider-inner {
+      color: rgba(201, 232, 251, 0.25);
+    }
+
+    .divider--light-blue {
+      background: var(--light-blue);
+    }
+
+    .divider--light-blue .divider-inner {
+      color: rgba(4, 25, 60, 0.12);
+    }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 16px 0;
+      transition: background 0.3s, box-shadow 0.3s, padding 0.3s;
+    }
+
+    .nav.scrolled {
+      background: rgba(4, 25, 60, 0.97);
+      box-shadow: 0 2px 24px rgba(0,0,0,0.15);
+      padding: 10px 0;
+      backdrop-filter: blur(8px);
+    }
+
+    .nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'Gabarito', sans-serif;
+      font-weight: 900;
+      font-size: 20px;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-logo span {
+      color: var(--red);
+    }
+
+    .nav-links {
+      display: none;
+      list-style: none;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .nav-cta {
+      background: var(--red);
+      color: var(--white) !important;
+      padding: 10px 24px;
+      border-radius: 6px;
+      font-weight: 700 !important;
+      transition: background 0.2s, transform 0.2s !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--orange) !important;
+      transform: translateY(-1px);
+    }
+
+    @media (min-width: 768px) {
+      .nav-links {
+        display: flex;
+      }
+    }
+
+    /* ===== HERO ===== */
+    #hero {
+      background: var(--navy);
+      color: var(--white);
+      padding: 160px 0 100px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero .polygon-hero-1 {
+      top: -80px;
+      right: -120px;
+      width: 400px;
+      height: 400px;
+    }
+
+    #hero .polygon-hero-2 {
+      bottom: -60px;
+      left: -80px;
+      width: 300px;
+      height: 300px;
+    }
+
+    #hero .polygon-hero-3 {
+      top: 30%;
+      right: 5%;
+      width: 200px;
+      height: 200px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 32px;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: 900;
+      margin-bottom: 28px;
+      letter-spacing: -1px;
+    }
+
+    .hero-content p {
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      line-height: 1.7;
+      color: rgba(255,255,255,0.75);
+      max-width: 620px;
+      margin-bottom: 12px;
+    }
+
+    .hero-tagline {
+      font-family: 'Sanchez', serif;
+      font-style: italic;
+      font-size: clamp(0.95rem, 1.6vw, 1.1rem) !important;
+      color: var(--light-blue) !important;
+      margin-bottom: 48px !important;
+      letter-spacing: 0.3px;
+    }
+    .hero-tagline strong {
+      color: var(--white);
+      font-weight: 700;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--red);
+      color: var(--white);
+      padding: 18px 44px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.3px;
+      transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background: var(--orange);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(240, 50, 75, 0.3);
+    }
+
+    /* ===== PROBLEM / STATS ===== */
+    #problem {
+      background: var(--white);
+      padding: 100px 0 110px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #problem .polygon-stats {
+      top: -40px;
+      left: -60px;
+      width: 250px;
+      height: 250px;
+      z-index: 0;
+    }
+
+    #problem .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 20px;
+    }
+
+    .section-heading {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900;
+      margin-bottom: 60px;
+      max-width: 700px;
+      letter-spacing: -0.5px;
+    }
+    .section-heading--no-margin {
+      margin-bottom: 8px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+
+    @media (min-width: 768px) {
+      .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 48px;
+      }
+    }
+
+    .stat-card {
+      position: relative;
+    }
+
+    .stat-number {
+      font-size: clamp(3rem, 7vw, 4.5rem);
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 16px;
+      letter-spacing: -2px;
+    }
+
+    .stat-number span {
+      color: var(--red);
+    }
+
+    .stat-text {
+      font-size: 1.05rem;
+      color: rgba(4, 25, 60, 0.7);
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .stats-source {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: rgba(4, 25, 60, 0.55);
+      text-align: center;
+      font-style: italic;
+    }
+    .stats-source a {
+      color: var(--red);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(240, 50, 75, 0.3);
+      transition: border-color 0.2s;
+    }
+    .stats-source a:hover {
+      border-bottom-color: var(--red);
+    }
+
+    /* ===== THREE PILLARS ===== */
+    #pillars {
+      background: var(--navy);
+      color: var(--white);
+      padding: 100px 0 110px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #pillars .polygon-pillars {
+      bottom: -80px;
+      right: -60px;
+      width: 350px;
+      height: 350px;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    @media (min-width: 768px) {
+      .pillars-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 48px;
+      }
+    }
+
+    .pillar-card {
+      position: relative;
+      z-index: 1;
+      padding: 40px 32px;
+      border: 1px solid rgba(201, 232, 251, 0.15);
+      border-radius: 12px;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .pillar-card:hover {
+      border-color: rgba(201, 232, 251, 0.35);
+      transform: translateY(-4px);
+    }
+
+    .pillar-number {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: var(--red);
+      margin-bottom: 20px;
+    }
+
+    .pillar-card h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      letter-spacing: -0.3px;
+    }
+
+    .pillar-card p {
+      font-size: 0.98rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.65);
+    }
+
+    .pillar-services {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .pillar-service-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--orange);
+      background: rgba(255, 160, 0, 0.08);
+      border: 1px solid rgba(255, 160, 0, 0.25);
+      border-radius: 4px;
+      letter-spacing: 0.3px;
+    }
+
+    .why-claim {
+      font-family: 'Sanchez', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--red);
+      margin-bottom: 56px;
+    }
+
+    .why-infobox {
+      margin-top: 56px;
+      max-width: 720px;
+      padding: 24px 28px;
+      background: rgba(4, 25, 60, 0.04);
+      border-left: 3px solid var(--orange);
+      border-radius: 4px;
+      font-size: 1rem;
+      line-height: 1.65;
+      color: rgba(4, 25, 60, 0.75);
+    }
+    .why-infobox strong {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    /* ===== PRO KOHO ===== */
+    #audience {
+      background: var(--light-blue);
+      padding: 100px 0 110px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #audience .polygon-audience {
+      top: 40px;
+      right: -40px;
+      width: 280px;
+      height: 280px;
+    }
+
+    .audience-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 600px) {
+      .audience-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 900px) {
+      .audience-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .audience-card {
+      background: var(--white);
+      padding: 32px 28px;
+      border-radius: 12px;
+      position: relative;
+      z-index: 1;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .audience-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(4, 25, 60, 0.08);
+    }
+
+    .audience-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .audience-card h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: var(--navy);
+    }
+
+    .audience-card p {
+      font-size: 0.92rem;
+      color: rgba(4, 25, 60, 0.6);
+      line-height: 1.6;
+    }
+
+    /* ===== PROČ MY ===== */
+    #why {
+      background: var(--white);
+      padding: 100px 0 110px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #why .polygon-why {
+      bottom: -60px;
+      left: -80px;
+      width: 320px;
+      height: 320px;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    @media (min-width: 768px) {
+      .why-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+      }
+    }
+
+    .why-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+
+    .why-stat {
+      border-left: 3px solid var(--red);
+      padding-left: 24px;
+    }
+
+    .why-stat .big {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .why-stat p {
+      font-size: 0.95rem;
+      color: rgba(4, 25, 60, 0.6);
+    }
+
+    .why-quote {
+      position: relative;
+      z-index: 1;
+    }
+
+    .why-quote blockquote {
+      font-family: 'Sanchez', serif;
+      font-style: italic;
+      font-size: clamp(1.3rem, 3vw, 1.7rem);
+      color: var(--navy);
+      line-height: 1.55;
+      margin-bottom: 24px;
+    }
+
+    .why-quote blockquote::before {
+      content: '\201E';
+      display: block;
+      font-size: 4rem;
+      color: var(--red);
+      line-height: 1;
+      margin-bottom: 8px;
+      font-family: 'Gabarito', sans-serif;
+    }
+
+    .why-quote cite {
+      font-style: normal;
+      font-family: 'Gabarito', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: rgba(4, 25, 60, 0.5);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* ===== FORMÁTY ===== */
+    #formats {
+      background: var(--navy);
+      color: var(--white);
+      padding: 100px 0 110px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #formats .polygon-formats {
+      top: -60px;
+      right: -100px;
+      width: 300px;
+      height: 300px;
+    }
+
+    .formats-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      margin-bottom: 60px;
+    }
+
+    @media (min-width: 768px) {
+      .formats-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+      }
+      .format-item--wide {
+        grid-column: 1 / -1;
+      }
+    }
+
+    .format-item {
+      padding: 32px;
+      border: 1px solid rgba(201, 232, 251, 0.12);
+      border-radius: 12px;
+      position: relative;
+      z-index: 1;
+      transition: border-color 0.3s;
+    }
+
+    .format-item:hover {
+      border-color: rgba(201, 232, 251, 0.3);
+    }
+
+    .format-tag {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 12px;
+    }
+
+    .format-item h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .format-item p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.6;
+    }
+
+    .format-list {
+      list-style: none;
+      margin: 14px 0 0;
+      padding: 0;
+    }
+    .format-list li {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.55;
+      padding: 8px 0 8px 16px;
+      position: relative;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .format-list li:first-child {
+      border-top: none;
+    }
+
+    @media (min-width: 768px) {
+      .format-list--cols {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0 24px;
+      }
+      .format-list--cols li {
+        border-top: none;
+        border-left: 1px solid rgba(255,255,255,0.08);
+        padding: 4px 0 4px 18px;
+      }
+      .format-list--cols li:first-child {
+        border-left: none;
+        padding-left: 16px;
+      }
+      .format-list--cols li::before {
+        left: 0;
+      }
+      .format-list--cols li:first-child::before {
+        left: 0;
+      }
+    }
+    .format-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--orange);
+      font-weight: 700;
+    }
+    .format-list li strong {
+      color: var(--white);
+      font-weight: 700;
+    }
+
+    .formats-note {
+      text-align: center;
+      font-family: 'Sanchez', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.5);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ===== KONTAKT ===== */
+    #contact {
+      background: var(--white);
+      padding: 100px 0 110px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #contact .polygon-contact {
+      top: -40px;
+      right: -60px;
+      width: 260px;
+      height: 260px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 60px;
+    }
+
+    @media (min-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+      }
+    }
+
+    .contact-info h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 24px;
+      letter-spacing: -0.5px;
+    }
+
+    .contact-info p {
+      font-size: 1.05rem;
+      color: rgba(4, 25, 60, 0.6);
+      line-height: 1.7;
+      margin-bottom: 40px;
+      max-width: 440px;
+    }
+
+    .contact-direct {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .contact-direct a {
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .contact-direct a:hover {
+      color: var(--red);
+    }
+
+    .contact-direct .icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: var(--light-blue);
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
+    .contact-form {
+      position: relative;
+      z-index: 1;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border: 2px solid rgba(4, 25, 60, 0.1);
+      border-radius: 8px;
+      font-family: 'Gabarito', sans-serif;
+      font-size: 1rem;
+      color: var(--navy);
+      background: var(--white);
+      transition: border-color 0.25s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--red);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-submit {
+      width: 100%;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.5);
+      padding: 48px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .footer-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+    }
+
+    .footer-brand {
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--white);
+    }
+
+    .footer-brand span {
+      color: var(--red);
+    }
+
+    .footer-meta {
+      font-size: 0.85rem;
+      line-height: 1.7;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    .powered-by {
+      text-align: center;
+      padding-top: 32px;
+      margin-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* ===== RESPONSIVE TWEAKS ===== */
+    @media (max-width: 767px) {
+      #hero {
+        padding: 120px 0 80px;
+        min-height: auto;
+      }
+
+      .section-heading {
+        margin-bottom: 40px;
+      }
+
+      .why-quote blockquote {
+        font-size: 1.2rem;
+      }
+
+      .audience-grid {
+        gap: 16px;
+      }
+    }
+
+    /* ===== MISC ===== */
+    ::selection {
+      background: var(--red);
+      color: var(--white);
+    }
+
+    /* Smooth transition for anchors */
+    a {
+      transition: color 0.2s;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="nav" id="nav">
+  <div class="container">
+    <a href="#hero" class="nav-logo">generace<span>.</span>work</a>
+    <ul class="nav-links">
+      <li><a href="#problem">Co se děje</a></li>
+      <li><a href="#pillars">Nabídka</a></li>
+      <li><a href="#why">Proč my</a></li>
+      <li><a href="#formats">Formáty</a></li>
+      <li><a href="#contact" class="nav-cta">Kontakt</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== 1. HERO ===== -->
+<section id="hero">
+  <!-- Polygon decorations -->
+  <div class="polygon polygon-hero-1">
+    <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="200,20 380,150 340,370 60,370 20,150" fill="rgba(201,232,251,0.06)" stroke="rgba(201,232,251,0.12)" stroke-width="1"/>
+    </svg>
+  </div>
+  <div class="polygon polygon-hero-2">
+    <svg viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="150,10 290,90 270,270 30,270 10,90" fill="rgba(201,232,251,0.04)" stroke="rgba(201,232,251,0.1)" stroke-width="1"/>
+    </svg>
+  </div>
+  <div class="polygon polygon-hero-3">
+    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="100,5 195,65 170,185 30,185 5,65" fill="rgba(201,232,251,0.05)" stroke="rgba(201,232,251,0.1)" stroke-width="1"/>
+    </svg>
+  </div>
+
+  <div class="container">
+    <div class="hero-content">
+      <span class="hero-tag">generace.work</span>
+      <h1>Rozumíme generaci,<br>kterou <span class="accent">potřebujete.</span></h1>
+      <p>Pomůžeme vám ji pochopit, získat i udržet.</p>
+      <p class="hero-tagline"><strong>Česká data. Český kontext. Česká rozhodnutí.</strong></p>
+      <a href="#contact" class="btn-primary">Chci vědět víc</a>
+    </div>
+  </div>
+</section>
+
+<!-- /// divider -->
+<div class="divider divider--dark" aria-hidden="true">
+  <div class="divider-inner">/// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// ///</div>
+</div>
+
+<!-- ===== 2. PROBLÉM ===== -->
+<section id="problem">
+  <div class="polygon polygon-stats polygon">
+    <svg viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="125,10 240,80 210,230 40,230 10,80" fill="var(--poly-blue)" stroke="var(--poly-stroke)" stroke-width="1"/>
+    </svg>
+  </div>
+
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label">Co se děje</p>
+      <h2 class="section-heading">Generace Z mění pravidla.<br>Většina firem neví, <span class="accent">jak reagovat.</span></h2>
+    </div>
+
+    <div class="stats-grid fade-in-children">
+      <div class="stat-card">
+        <div class="stat-number">73<span>&thinsp;%</span></div>
+        <p class="stat-text">firem říká, že nerozumí svým nejmladším zaměstnancům.</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">11</div>
+        <p class="stat-text">měsíců - průměrná doba setrvání Gen&nbsp;Z u prvního zaměstnavatele.</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">30<span>&thinsp;%</span></div>
+        <p class="stat-text">pracovní síly bude do roku 2030 tvořit generace Z.</p>
+      </div>
+    </div>
+
+    <p class="stats-source fade-in">Zdroj: vlastní průzkumy Než zazvoní, 2017–2026 · <a href="https://www.nezzazvoni.cz/pruzkumy-a-data/" target="_blank" rel="noopener">nezzazvoni.cz/pruzkumy-a-data</a></p>
+  </div>
+</section>
+
+<!-- /// divider -->
+<div class="divider" aria-hidden="true">
+  <div class="divider-inner">/// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// ///</div>
+</div>
+
+<!-- ===== 3. TŘI PILÍŘE ===== -->
+<section id="pillars">
+  <div class="polygon polygon-pillars polygon">
+    <svg viewBox="0 0 350 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="175,15 340,110 300,320 50,320 10,110" fill="rgba(201,232,251,0.05)" stroke="rgba(201,232,251,0.1)" stroke-width="1"/>
+    </svg>
+  </div>
+
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label">Co nabízíme</p>
+      <h2 class="section-heading" style="color: var(--white)">Tři pilíře, které <span class="accent">fungují.</span></h2>
+    </div>
+
+    <div class="pillars-grid fade-in-children">
+      <div class="pillar-card">
+        <div class="pillar-number">01</div>
+        <h3>Pochopte je</h3>
+        <p>Najděte s generací Z společnou řeč, zjistěte, co je motivuje a jaká jsou jejich očekávání.</p>
+        <div class="pillar-services">
+          <a href="#formats" class="pillar-service-badge">Keynote</a>
+          <a href="#formats" class="pillar-service-badge">Workshop</a>
+        </div>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-number">02</div>
+        <h3>Získejte je</h3>
+        <p>Jak zaujmout nastupující pracovní sílu, kde figurovat, aby si vás všimli a chtěli k vám.</p>
+        <div class="pillar-services">
+          <a href="#formats" class="pillar-service-badge">Workshop</a>
+          <a href="#formats" class="pillar-service-badge">Konzultace</a>
+        </div>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-number">03</div>
+        <h3>Udržte si je</h3>
+        <p>Jaké jsou kroky k udržení zaměstnanců, jak snížit fluktuaci a zvýšit motivaci.</p>
+        <div class="pillar-services">
+          <a href="#formats" class="pillar-service-badge">Konzultace</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- /// divider -->
+<div class="divider divider--dark" aria-hidden="true">
+  <div class="divider-inner">/// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// ///</div>
+</div>
+
+<!-- ===== 4. PRO KOHO ===== -->
+<section id="audience">
+  <div class="polygon polygon-audience polygon">
+    <svg viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="140,10 270,90 240,260 40,260 10,90" fill="rgba(4,25,60,0.04)" stroke="rgba(4,25,60,0.08)" stroke-width="1"/>
+    </svg>
+  </div>
+
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label">Pro koho</p>
+      <h2 class="section-heading">Pomáháme všude, kde pracují <span class="accent">mladí.</span></h2>
+    </div>
+
+    <div class="audience-grid fade-in-children">
+      <div class="audience-card">
+        <span class="audience-icon" aria-hidden="true">&#9881;</span>
+        <h3>Výrobní firmy</h3>
+        <p>Nábor technických pozic, kde mladí chybí nejvíc.</p>
+      </div>
+      <div class="audience-card">
+        <span class="audience-icon" aria-hidden="true">&#9878;</span>
+        <h3>Banky a korporáty</h3>
+        <p>Retence mladých talentů a snížení fluktuace.</p>
+      </div>
+      <div class="audience-card">
+        <span class="audience-icon" aria-hidden="true">&#9829;</span>
+        <h3>Nemocnice a státní sektor</h3>
+        <p>Proč mladí utíkají a jak je přesvědčit zůstat.</p>
+      </div>
+      <div class="audience-card">
+        <span class="audience-icon" aria-hidden="true">&#9734;</span>
+        <h3>Vysoké školy</h3>
+        <p>Jak oslovit a udržet studenty v oboru.</p>
+      </div>
+      <div class="audience-card">
+        <span class="audience-icon" aria-hidden="true">&#9650;</span>
+        <h3>Stavebnictví a logistika</h3>
+        <p>Obory s největším nedostatkem mladé pracovní síly.</p>
+      </div>
+      <div class="audience-card">
+        <span class="audience-icon" aria-hidden="true">&#9632;</span>
+        <h3>Veřejná správa</h3>
+        <p>Odvětví, které prochází modernizací a digitalizací.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- /// divider -->
+<div class="divider divider--light-blue" aria-hidden="true">
+  <div class="divider-inner">/// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// ///</div>
+</div>
+
+<!-- ===== 5. PROČ MY ===== -->
+<section id="why">
+  <div class="polygon polygon-why polygon">
+    <svg viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="160,12 310,100 280,300 40,300 10,100" fill="var(--poly-blue)" stroke="var(--poly-stroke)" stroke-width="1"/>
+    </svg>
+  </div>
+
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label">Proč my</p>
+      <h2 class="section-heading section-heading--no-margin">15 let mezi mladými.<br>To je naše <span class="accent">výhoda.</span></h2>
+      <p class="why-claim fade-in">15 let · 20+ průzkumů · 10 000+ respondentů · 500+ škol</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-stats fade-in-children">
+        <div class="why-stat">
+          <div class="big">15 let</div>
+          <p>ve vzdělávání a práci s generací Z</p>
+        </div>
+        <div class="why-stat">
+          <div class="big">500+ škol</div>
+          <p>po celé České republice</p>
+        </div>
+        <div class="why-stat">
+          <div class="big">Tisíce</div>
+          <p>proškolených učitelů a firemních manažerů</p>
+        </div>
+        <div class="why-stat">
+          <div class="big">Unikátní data</div>
+          <p>přímý přístup k datům, která nikdo jiný nemá</p>
+        </div>
+      </div>
+
+      <div class="why-infobox fade-in">
+        <strong>Od 2017 sbíráme data přímo od desítek tisíc mladých lidí.</strong> Nepřebíráme zahraniční trendy — máme vlastní.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- /// divider -->
+<div class="divider" aria-hidden="true">
+  <div class="divider-inner">/// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// ///</div>
+</div>
+
+<!-- ===== 6. FORMÁTY ===== -->
+<section id="formats">
+  <div class="polygon polygon-formats polygon">
+    <svg viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="150,10 290,90 260,280 40,280 10,90" fill="rgba(201,232,251,0.05)" stroke="rgba(201,232,251,0.1)" stroke-width="1"/>
+    </svg>
+  </div>
+
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label">Formáty spolupráce</p>
+      <h2 class="section-heading" style="color: var(--white)">Vyberte si, co vám <span class="accent">sedí.</span></h2>
+    </div>
+
+    <div class="formats-list fade-in-children">
+      <div class="format-item">
+        <div class="format-tag">60–90 min</div>
+        <h3>Keynote</h3>
+        <p>Přednáška pro konference a firemní akce. Inspirativní, datově podložená, na míru vašemu publiku.</p>
+      </div>
+      <div class="format-item">
+        <div class="format-tag">240 minut</div>
+        <h3>Workshop</h3>
+        <p>Komplexnější představení problematiky, praktické nástroje a techniky, které můžete začít využívat.</p>
+      </div>
+      <div class="format-item format-item--wide">
+        <div class="format-tag">Individuální</div>
+        <h3>Konzultace</h3>
+        <p>Přímá práce s vaším týmem nebo vedením. Vyberte si formu, která vám sedí:</p>
+        <ul class="format-list format-list--cols">
+          <li><strong>Strategická konzultace (3 h)</strong> — analýza vaší situace + konkrétní doporučení</li>
+          <li><strong>Employer branding audit (1 den)</strong> — kompletní zhodnocení komunikace navenek</li>
+          <li><strong>Něco jiného?</strong> Ozvěte se a připravíme řešení na míru.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- /// divider -->
+<div class="divider divider--dark" aria-hidden="true">
+  <div class="divider-inner">/// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// ///</div>
+</div>
+
+<!-- ===== 7. KONTAKT ===== -->
+<section id="contact">
+  <div class="polygon polygon-contact polygon">
+    <svg viewBox="0 0 260 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="130,10 250,80 220,240 40,240 10,80" fill="var(--poly-blue)" stroke="var(--poly-stroke)" stroke-width="1"/>
+    </svg>
+  </div>
+
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info fade-in">
+        <p class="section-label">Kontakt</p>
+        <h2>Pojďme se <span class="accent">bavit.</span></h2>
+        <p>Napište nám a ozveme se do 24 hodin. Nebo zavolejte - rádi si popovídáme.</p>
+
+        <div class="contact-direct">
+          <a href="mailto:info@nezzazvoni.cz">
+            <span class="icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#04193c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-10 8L2 4"/></svg>
+            </span>
+            info@nezzazvoni.cz
+          </a>
+          <a href="https://nezzazvoni.cz" target="_blank" rel="noopener">
+            <span class="icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#04193c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 010 20 15 15 0 010-20z"/></svg>
+            </span>
+            nezzazvoni.cz
+          </a>
+        </div>
+      </div>
+
+      <form class="contact-form fade-in" id="contactForm" action="https://formspree.io/f/mnjlywbe" method="POST">
+        <div class="form-group">
+          <label for="name">Jméno</label>
+          <input type="text" id="name" name="name" required placeholder="Jan Novák">
+        </div>
+        <div class="form-group">
+          <label for="company">Firma</label>
+          <input type="text" id="company" name="company" placeholder="Název společnosti">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="jan@firma.cz">
+        </div>
+        <div class="form-group">
+          <label for="message">Zpráva</label>
+          <textarea id="message" name="message" placeholder="Jak vám můžeme pomoci?"></textarea>
+        </div>
+        <button type="submit" class="btn-primary form-submit">Odeslat zprávu</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 8. FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">generace<span>.</span>work</div>
+        <div class="footer-meta" style="margin-top: 8px;">&copy; 2026 generace.work | Projekt Než zazvoní, s.r.o.</div>
+      </div>
+      <div class="footer-links">
+        <a href="https://nezzazvoni.cz" target="_blank" rel="noopener">nezzazvoni.cz</a>
+        <a href="https://www.linkedin.com/company/nez-zazvoni" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="powered-by">Powered by Než zazvoní - 15 let zkušeností ve vzdělávání</div>
+  </div>
+</footer>
+
+<script>
+  // ===== SMOOTH SCROLL =====
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // ===== NAV SCROLL EFFECT =====
+  const nav = document.getElementById('nav');
+  let lastScroll = 0;
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  }, { passive: true });
+
+  // ===== FADE-IN ON SCROLL =====
+  document.documentElement.classList.add('js-ready');
+
+  const observerOptions = {
+    threshold: 0.15,
+    rootMargin: '0px 0px -40px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.fade-in, .fade-in-children').forEach(el => {
+    observer.observe(el);
+  });
+
+  // ===== CONTACT FORM (Formspree async) =====
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const button = form.querySelector('button[type="submit"]');
+    const originalText = button.textContent;
+    button.textContent = 'Odesílám...';
+    button.disabled = true;
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        form.innerHTML = '<div style="padding: 40px 20px; text-align: center; color: var(--navy);"><h3 style="font-size: 1.4rem; margin-bottom: 12px;">Děkujeme!</h3><p>Zpráva dorazila. Ozveme se do 24 hodin.</p></div>';
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (err) {
+      button.textContent = originalText;
+      button.disabled = false;
+      alert('Něco se nepodařilo. Napište nám prosím přímo na info@nezzazvoni.cz.');
+    }
+  });
+</script>
+
+</body>
+</html>

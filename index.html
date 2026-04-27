@@ -1,1446 +1,1746 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>generace.work - Rozumíme generaci, kterou potřebujete</title>
-  <meta name="description" content="Pomáháme firmám najít, udržet a vést mladé zaměstnance. 15 let dat. Tisíce proškolených lidí. Nejlepší Gen Z data v Česku.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800;900&family=Sanchez:ital@0;1&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>generace.work – Rozumíme generaci, kterou potřebujete | Než zazvoní</title>
+  <meta name="description" content="Pomáháme firmám pochopit, získat a udržet generaci Z. 15 let dat z českého prostředí, 10 000+ respondentů, 500+ škol. Keynote, workshopy a konzultace pro HR a vedení firem." />
+  <meta name="keywords" content="generace Z, Gen Z, nábor, retence, fluktuace, employer branding, mladí zaměstnanci, HR, Než zazvoní, generace.work" />
+  <meta name="author" content="Než zazvoní, s.r.o." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://generace.work/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://generace.work/" />
+  <meta property="og:title" content="generace.work – Rozumíme generaci, kterou potřebujete" />
+  <meta property="og:description" content="15 let dat o české generaci Z. Pomůžeme vám ji pochopit, získat i udržet." />
+  <meta property="og:locale" content="cs_CZ" />
+  <meta property="og:site_name" content="generace.work" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="generace.work – Rozumíme generaci, kterou potřebujete" />
+  <meta name="twitter:description" content="15 let dat o české generaci Z. Pomůžeme vám ji pochopit, získat i udržet." />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "generace.work",
+    "alternateName": "Než zazvoní – generace.work",
+    "description": "Pomáháme firmám pochopit, získat a udržet generaci Z. 15 let dat z českého prostředí.",
+    "url": "https://generace.work/",
+    "logo": "https://generace.work/assets/logo-nz.png",
+    "areaServed": "CZ",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Než zazvoní, s.r.o.",
+      "url": "https://nezzazvoni.cz"
+    },
+    "email": "info@nezzazvoni.cz",
+    "sameAs": [
+      "https://nezzazvoni.cz",
+      "https://www.linkedin.com/company/nez-zazvoni"
+    ],
+    "knowsAbout": ["Generace Z", "Employer Branding", "HR Strategie", "Retence zaměstnanců", "Nábor"],
+    "makesOffer": [
+      {"@type":"Offer","name":"Keynote","description":"Inspirativní přednáška 60–90 minut na míru publiku."},
+      {"@type":"Offer","name":"Workshop","description":"4hodinový praktický workshop s nástroji a technikami."},
+      {"@type":"Offer","name":"Strategická konzultace","description":"3hodinová analýza situace a konkrétní doporučení."},
+      {"@type":"Offer","name":"Employer branding audit","description":"Celodenní zhodnocení vaší komunikace navenek."}
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800;900&family=Sanchez:ital@0;1&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2304193c'/%3E%3Cpath d='M9 20 L13 11 L17 20 M21 9 L25 18' stroke='%23f0324b' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E" />
+
   <style>
-    /* ===== RESET & BASE ===== */
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root {
-      --navy: #04193c;
-      --red: #f0324b;
-      --light-blue: #c9e8fb;
-      --orange: #ffa000;
-      --white: #ffffff;
-      --black: #000000;
-      --poly-blue: rgba(201, 232, 251, 0.4);
-      --poly-stroke: rgba(201, 232, 251, 0.6);
-    }
-
-    html {
-      scroll-behavior: smooth;
-      font-size: 16px;
-    }
-
-    body {
-      font-family: 'Gabarito', sans-serif;
-      color: var(--navy);
-      background: var(--white);
-      line-height: 1.6;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* ===== TYPOGRAPHY ===== */
-    h1, h2, h3, h4 {
-      font-family: 'Gabarito', sans-serif;
-      line-height: 1.15;
-      font-weight: 800;
-    }
-
-    .accent {
-      font-family: 'Sanchez', serif;
-      font-style: italic;
-      color: var(--red);
-    }
-
-    /* ===== LAYOUT ===== */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    section {
-      position: relative;
-    }
-
-    /* ===== FADE-IN ANIMATION ===== */
-    /* JS adds .js-ready to html - without JS, everything is visible */
-    .js-ready .fade-in {
-      opacity: 0;
-      transform: translateY(32px);
-      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-    }
-
-    .js-ready .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Stagger children */
-    .js-ready .fade-in-children > * {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-
-    .js-ready .fade-in-children.visible > *:nth-child(1) { transition-delay: 0s; }
-    .js-ready .fade-in-children.visible > *:nth-child(2) { transition-delay: 0.12s; }
-    .js-ready .fade-in-children.visible > *:nth-child(3) { transition-delay: 0.24s; }
-    .js-ready .fade-in-children.visible > *:nth-child(4) { transition-delay: 0.36s; }
-    .js-ready .fade-in-children.visible > *:nth-child(5) { transition-delay: 0.48s; }
-
-    .js-ready .fade-in-children.visible > * {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ===== POLYGON DECORATIONS ===== */
-    .polygon {
-      position: absolute;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .polygon svg {
-      width: 100%;
-      height: 100%;
-    }
-
-    /* ===== SECTION DIVIDER - /// strip ===== */
-    .divider {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0;
-      overflow: hidden;
-      height: 48px;
-      user-select: none;
-      background: var(--white);
-    }
-
-    .divider-inner {
-      font-family: 'Gabarito', sans-serif;
-      font-weight: 900;
-      font-size: 20px;
-      letter-spacing: 6px;
-      color: var(--light-blue);
-      white-space: nowrap;
-      line-height: 48px;
-    }
-
-    .divider--dark {
-      background: var(--navy);
-    }
-
-    .divider--dark .divider-inner {
-      color: rgba(201, 232, 251, 0.25);
-    }
-
-    .divider--light-blue {
-      background: var(--light-blue);
-    }
-
-    .divider--light-blue .divider-inner {
-      color: rgba(4, 25, 60, 0.12);
-    }
-
-    /* ===== NAV ===== */
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      padding: 16px 0;
-      transition: background 0.3s, box-shadow 0.3s, padding 0.3s;
-    }
-
-    .nav.scrolled {
-      background: rgba(4, 25, 60, 0.97);
-      box-shadow: 0 2px 24px rgba(0,0,0,0.15);
-      padding: 10px 0;
-      backdrop-filter: blur(8px);
-    }
-
-    .nav .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav-logo {
-      font-family: 'Gabarito', sans-serif;
-      font-weight: 900;
-      font-size: 20px;
-      color: var(--white);
-      text-decoration: none;
-      letter-spacing: -0.5px;
-    }
-
-    .nav-logo span {
-      color: var(--red);
-    }
-
-    .nav-links {
-      display: none;
-      list-style: none;
-      gap: 32px;
-      align-items: center;
-    }
-
-    .nav-links a {
-      color: rgba(255,255,255,0.8);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.3px;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: var(--white);
-    }
-
-    .nav-cta {
-      background: var(--red);
-      color: var(--white) !important;
-      padding: 10px 24px;
-      border-radius: 6px;
-      font-weight: 700 !important;
-      transition: background 0.2s, transform 0.2s !important;
-    }
-
-    .nav-cta:hover {
-      background: var(--orange) !important;
-      transform: translateY(-1px);
-    }
-
-    @media (min-width: 768px) {
-      .nav-links {
-        display: flex;
-      }
-    }
-
-    /* ===== HERO ===== */
-    #hero {
-      background: var(--navy);
-      color: var(--white);
-      padding: 160px 0 100px;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    #hero .polygon-hero-1 {
-      top: -80px;
-      right: -120px;
-      width: 400px;
-      height: 400px;
-    }
-
-    #hero .polygon-hero-2 {
-      bottom: -60px;
-      left: -80px;
-      width: 300px;
-      height: 300px;
-    }
-
-    #hero .polygon-hero-3 {
-      top: 30%;
-      right: 5%;
-      width: 200px;
-      height: 200px;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 800px;
-    }
-
-    .hero-tag {
-      display: inline-block;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 32px;
-    }
-
-    .hero-content h1 {
-      font-size: clamp(2.4rem, 6vw, 4.2rem);
-      font-weight: 900;
-      margin-bottom: 28px;
-      letter-spacing: -1px;
-    }
-
-    .hero-content p {
-      font-size: clamp(1.05rem, 2vw, 1.25rem);
-      line-height: 1.7;
-      color: rgba(255,255,255,0.75);
-      max-width: 620px;
-      margin-bottom: 12px;
-    }
-
-    .hero-tagline {
-      font-family: 'Sanchez', serif;
-      font-style: italic;
-      font-size: clamp(0.95rem, 1.6vw, 1.1rem) !important;
-      color: var(--light-blue) !important;
-      margin-bottom: 48px !important;
-      letter-spacing: 0.3px;
-    }
-    .hero-tagline strong {
-      color: var(--white);
-      font-weight: 700;
-    }
-
-    .btn-primary {
-      display: inline-block;
-      background: var(--red);
-      color: var(--white);
-      padding: 18px 44px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.05rem;
-      letter-spacing: 0.3px;
-      transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
-      border: none;
-      cursor: pointer;
-    }
-
-    .btn-primary:hover {
-      background: var(--orange);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(240, 50, 75, 0.3);
-    }
-
-    /* ===== PROBLEM / STATS ===== */
-    #problem {
-      background: var(--white);
-      padding: 100px 0 110px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    #problem .polygon-stats {
-      top: -40px;
-      left: -60px;
-      width: 250px;
-      height: 250px;
-      z-index: 0;
-    }
-
-    #problem .container {
-      position: relative;
-      z-index: 1;
-    }
-
-    .section-label {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 20px;
-    }
-
-    .section-heading {
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 900;
-      margin-bottom: 60px;
-      max-width: 700px;
-      letter-spacing: -0.5px;
-    }
-    .section-heading--no-margin {
-      margin-bottom: 8px;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 48px;
-    }
-
-    @media (min-width: 768px) {
-      .stats-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 48px;
-      }
-    }
-
-    .stat-card {
-      position: relative;
-    }
-
-    .stat-number {
-      font-size: clamp(3rem, 7vw, 4.5rem);
-      font-weight: 900;
-      color: var(--navy);
-      line-height: 1;
-      margin-bottom: 16px;
-      letter-spacing: -2px;
-    }
-
-    .stat-number span {
-      color: var(--red);
-    }
-
-    .stat-text {
-      font-size: 1.05rem;
-      color: rgba(4, 25, 60, 0.7);
-      line-height: 1.6;
-      max-width: 320px;
-    }
-
-    .stats-source {
-      margin-top: 40px;
-      font-size: 0.9rem;
-      color: rgba(4, 25, 60, 0.55);
-      text-align: center;
-      font-style: italic;
-    }
-    .stats-source a {
-      color: var(--red);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(240, 50, 75, 0.3);
-      transition: border-color 0.2s;
-    }
-    .stats-source a:hover {
-      border-bottom-color: var(--red);
-    }
-
-    /* ===== THREE PILLARS ===== */
-    #pillars {
-      background: var(--navy);
-      color: var(--white);
-      padding: 100px 0 110px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    #pillars .polygon-pillars {
-      bottom: -80px;
-      right: -60px;
-      width: 350px;
-      height: 350px;
-    }
-
-    .pillars-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 40px;
-    }
-
-    @media (min-width: 768px) {
-      .pillars-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 48px;
-      }
-    }
-
-    .pillar-card {
-      position: relative;
-      z-index: 1;
-      padding: 40px 32px;
-      border: 1px solid rgba(201, 232, 251, 0.15);
-      border-radius: 12px;
-      transition: border-color 0.3s, transform 0.3s;
-    }
-
-    .pillar-card:hover {
-      border-color: rgba(201, 232, 251, 0.35);
-      transform: translateY(-4px);
-    }
-
-    .pillar-number {
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      color: var(--red);
-      margin-bottom: 20px;
-    }
-
-    .pillar-card h3 {
-      font-size: 1.6rem;
-      font-weight: 800;
-      margin-bottom: 16px;
-      letter-spacing: -0.3px;
-    }
-
-    .pillar-card p {
-      font-size: 0.98rem;
-      line-height: 1.7;
-      color: rgba(255,255,255,0.65);
-    }
-
-    .pillar-services {
-      margin-top: 18px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-    .pillar-service-badge {
-      display: inline-block;
-      padding: 4px 10px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--orange);
-      background: rgba(255, 160, 0, 0.08);
-      border: 1px solid rgba(255, 160, 0, 0.25);
-      border-radius: 4px;
-      letter-spacing: 0.3px;
-    }
-
-    .why-claim {
-      font-family: 'Sanchez', serif;
-      font-style: italic;
-      font-size: 1.05rem;
-      color: var(--red);
-      margin-bottom: 56px;
-    }
-
-    .why-infobox {
-      margin-top: 56px;
-      max-width: 720px;
-      padding: 24px 28px;
-      background: rgba(4, 25, 60, 0.04);
-      border-left: 3px solid var(--orange);
-      border-radius: 4px;
-      font-size: 1rem;
-      line-height: 1.65;
-      color: rgba(4, 25, 60, 0.75);
-    }
-    .why-infobox strong {
-      color: var(--navy);
-      font-weight: 700;
-    }
-
-    /* ===== PRO KOHO ===== */
-    #audience {
-      background: var(--light-blue);
-      padding: 100px 0 110px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    #audience .polygon-audience {
-      top: 40px;
-      right: -40px;
-      width: 280px;
-      height: 280px;
-    }
-
-    .audience-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-
-    @media (min-width: 600px) {
-      .audience-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (min-width: 900px) {
-      .audience-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    .audience-card {
-      background: var(--white);
-      padding: 32px 28px;
-      border-radius: 12px;
-      position: relative;
-      z-index: 1;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .audience-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(4, 25, 60, 0.08);
-    }
-
-    .audience-icon {
-      font-size: 2rem;
-      margin-bottom: 16px;
-      display: block;
-    }
-
-    .audience-card h3 {
-      font-size: 1.15rem;
-      font-weight: 800;
-      margin-bottom: 8px;
-      color: var(--navy);
-    }
-
-    .audience-card p {
-      font-size: 0.92rem;
-      color: rgba(4, 25, 60, 0.6);
-      line-height: 1.6;
-    }
-
-    /* ===== PROČ MY ===== */
-    #why {
-      background: var(--white);
-      padding: 100px 0 110px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    #why .polygon-why {
-      bottom: -60px;
-      left: -80px;
-      width: 320px;
-      height: 320px;
-    }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 60px;
-      align-items: start;
-    }
-
-    @media (min-width: 768px) {
-      .why-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 80px;
-      }
-    }
-
-    .why-stats {
-      display: flex;
-      flex-direction: column;
-      gap: 36px;
-    }
-
-    .why-stat {
-      border-left: 3px solid var(--red);
-      padding-left: 24px;
-    }
-
-    .why-stat .big {
-      font-size: 2.2rem;
-      font-weight: 900;
-      color: var(--navy);
-      line-height: 1.1;
-      margin-bottom: 6px;
-    }
-
-    .why-stat p {
-      font-size: 0.95rem;
-      color: rgba(4, 25, 60, 0.6);
-    }
-
-    .why-quote {
-      position: relative;
-      z-index: 1;
-    }
-
-    .why-quote blockquote {
-      font-family: 'Sanchez', serif;
-      font-style: italic;
-      font-size: clamp(1.3rem, 3vw, 1.7rem);
-      color: var(--navy);
-      line-height: 1.55;
-      margin-bottom: 24px;
-    }
-
-    .why-quote blockquote::before {
-      content: '\201E';
-      display: block;
-      font-size: 4rem;
-      color: var(--red);
-      line-height: 1;
-      margin-bottom: 8px;
-      font-family: 'Gabarito', sans-serif;
-    }
-
-    .why-quote cite {
-      font-style: normal;
-      font-family: 'Gabarito', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: rgba(4, 25, 60, 0.5);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    /* ===== FORMÁTY ===== */
-    #formats {
-      background: var(--navy);
-      color: var(--white);
-      padding: 100px 0 110px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    #formats .polygon-formats {
-      top: -60px;
-      right: -100px;
-      width: 300px;
-      height: 300px;
-    }
-
-    .formats-list {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 32px;
-      margin-bottom: 60px;
-    }
-
-    @media (min-width: 768px) {
-      .formats-list {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 32px;
-      }
-      .format-item--wide {
-        grid-column: 1 / -1;
-      }
-    }
-
-    .format-item {
-      padding: 32px;
-      border: 1px solid rgba(201, 232, 251, 0.12);
-      border-radius: 12px;
-      position: relative;
-      z-index: 1;
-      transition: border-color 0.3s;
-    }
-
-    .format-item:hover {
-      border-color: rgba(201, 232, 251, 0.3);
-    }
-
-    .format-tag {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--orange);
-      margin-bottom: 12px;
-    }
-
-    .format-item h3 {
-      font-size: 1.35rem;
-      font-weight: 800;
-      margin-bottom: 10px;
-    }
-
-    .format-item p {
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.6;
-    }
-
-    .format-list {
-      list-style: none;
-      margin: 14px 0 0;
-      padding: 0;
-    }
-    .format-list li {
-      font-size: 0.92rem;
-      color: rgba(255,255,255,0.65);
-      line-height: 1.55;
-      padding: 8px 0 8px 16px;
-      position: relative;
-      border-top: 1px solid rgba(255,255,255,0.08);
-    }
-    .format-list li:first-child {
-      border-top: none;
-    }
-
-    @media (min-width: 768px) {
-      .format-list--cols {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0 24px;
-      }
-      .format-list--cols li {
-        border-top: none;
-        border-left: 1px solid rgba(255,255,255,0.08);
-        padding: 4px 0 4px 18px;
-      }
-      .format-list--cols li:first-child {
-        border-left: none;
-        padding-left: 16px;
-      }
-      .format-list--cols li::before {
-        left: 0;
-      }
-      .format-list--cols li:first-child::before {
-        left: 0;
-      }
-    }
-    .format-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: var(--orange);
-      font-weight: 700;
-    }
-    .format-list li strong {
-      color: var(--white);
-      font-weight: 700;
-    }
-
-    .formats-note {
-      text-align: center;
-      font-family: 'Sanchez', serif;
-      font-style: italic;
-      font-size: 1.15rem;
-      color: rgba(255,255,255,0.5);
-      position: relative;
-      z-index: 1;
-    }
-
-    /* ===== KONTAKT ===== */
-    #contact {
-      background: var(--white);
-      padding: 100px 0 110px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    #contact .polygon-contact {
-      top: -40px;
-      right: -60px;
-      width: 260px;
-      height: 260px;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 60px;
-    }
-
-    @media (min-width: 768px) {
-      .contact-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 80px;
-      }
-    }
-
-    .contact-info h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-bottom: 24px;
-      letter-spacing: -0.5px;
-    }
-
-    .contact-info p {
-      font-size: 1.05rem;
-      color: rgba(4, 25, 60, 0.6);
-      line-height: 1.7;
-      margin-bottom: 40px;
-      max-width: 440px;
-    }
-
-    .contact-direct {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .contact-direct a {
-      color: var(--navy);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: color 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .contact-direct a:hover {
-      color: var(--red);
-    }
-
-    .contact-direct .icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      background: var(--light-blue);
-      border-radius: 8px;
-      flex-shrink: 0;
-    }
-
-    .contact-form {
-      position: relative;
-      z-index: 1;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--navy);
-      margin-bottom: 8px;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 14px 18px;
-      border: 2px solid rgba(4, 25, 60, 0.1);
-      border-radius: 8px;
-      font-family: 'Gabarito', sans-serif;
-      font-size: 1rem;
-      color: var(--navy);
-      background: var(--white);
-      transition: border-color 0.25s;
-      outline: none;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: var(--red);
-    }
-
-    .form-group textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    .form-submit {
-      width: 100%;
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      background: var(--navy);
-      color: rgba(255,255,255,0.5);
-      padding: 48px 0;
-    }
-
-    .footer-inner {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      align-items: center;
-      text-align: center;
-    }
-
-    @media (min-width: 768px) {
-      .footer-inner {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
-      }
-    }
-
-    .footer-brand {
-      font-weight: 800;
-      font-size: 1.05rem;
-      color: var(--white);
-    }
-
-    .footer-brand span {
-      color: var(--red);
-    }
-
-    .footer-meta {
-      font-size: 0.85rem;
-      line-height: 1.7;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 24px;
-    }
-
-    .footer-links a {
-      color: rgba(255,255,255,0.5);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 600;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover {
-      color: var(--white);
-    }
-
-    .powered-by {
-      text-align: center;
-      padding-top: 32px;
-      margin-top: 32px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      font-size: 0.82rem;
-      color: rgba(255,255,255,0.3);
-    }
-
-    /* ===== RESPONSIVE TWEAKS ===== */
-    @media (max-width: 767px) {
-      #hero {
-        padding: 120px 0 80px;
-        min-height: auto;
-      }
-
-      .section-heading {
-        margin-bottom: 40px;
-      }
-
-      .why-quote blockquote {
-        font-size: 1.2rem;
-      }
-
-      .audience-grid {
-        gap: 16px;
-      }
-    }
-
-    /* ===== MISC ===== */
-    ::selection {
-      background: var(--red);
-      color: var(--white);
-    }
-
-    /* Smooth transition for anchors */
-    a {
-      transition: color 0.2s;
-    }
-  </style>
+/* ============== TOKENS ============== */
+:root {
+  /* Brand barvy z manuálu Než zazvoní */
+  --navy: #04193c;
+  --navy-90: #0a234d;
+  --navy-80: #1c2f5a;
+  --light-blue: #c9e8fb;
+  --light-blue-soft: #e6f3fc;
+  --orange: #ffa000;
+  --red: #f0324b;
+  --red-deep: #d92340;
+  --black: #000000;
+  --white: #ffffff;
+  /* Off-whites laděné teple */
+  --paper: #fafaf7;
+  --paper-warm: #f4f1ea;
+  --line: rgba(4, 25, 60, 0.10);
+  --line-light: rgba(255, 255, 255, 0.12);
+  --ink-60: rgba(4, 25, 60, 0.6);
+  --ink-50: rgba(4, 25, 60, 0.5);
+  --ink-40: rgba(4, 25, 60, 0.4);
+  --on-dark-70: rgba(255, 255, 255, 0.7);
+  --on-dark-50: rgba(255, 255, 255, 0.5);
+
+  /* Typo */
+  --sans: 'Gabarito', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+  --serif: 'Sanchez', Georgia, serif;
+
+  /* Spacing */
+  --container: 1280px;
+  --gutter: 32px;
+
+  /* Radius */
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 16px;
+}
+
+/* ============== RESET ============== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--sans);
+  font-weight: 400;
+  color: var(--navy);
+  background: var(--paper);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  text-wrap: pretty;
+  overflow-x: hidden;
+}
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+input, textarea, select { font: inherit; color: inherit; }
+a { color: inherit; text-decoration: none; }
+
+::selection { background: var(--red); color: var(--white); }
+
+.skip {
+  position: absolute; left: -9999px; top: 0; padding: 12px 18px;
+  background: var(--navy); color: var(--white); z-index: 9999;
+  font-weight: 700; border-radius: 0 0 8px 0;
+}
+.skip:focus { left: 0; }
+
+/* ============== LAYOUT ============== */
+.container { max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); }
+
+.section { position: relative; padding: clamp(80px, 11vw, 140px) 0; overflow: hidden; }
+.section--light { background: var(--paper); color: var(--navy); }
+.section--dark  { background: var(--navy); color: var(--white); }
+.section--blue  { background: var(--light-blue); color: var(--navy); }
+
+.section__head { max-width: 980px; margin-bottom: clamp(48px, 7vw, 88px); }
+.section__head--split {
+  display: grid; grid-template-columns: 1fr; gap: 24px;
+  max-width: var(--container);
+}
+@media (min-width: 900px) {
+  .section__head--split { grid-template-columns: 1.2fr 0.8fr; gap: 80px; align-items: end; }
+}
+.section__lede {
+  font-size: clamp(1.05rem, 1.3vw, 1.18rem);
+  color: var(--ink-60); line-height: 1.6; max-width: 640px; margin-top: 24px;
+}
+.section--dark .section__lede { color: var(--on-dark-70); }
+.section__aside { color: var(--ink-60); font-size: 1rem; line-height: 1.65; max-width: 420px; }
+
+/* ============== TYPOGRAPHY ============== */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 14px;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--navy); margin-bottom: 28px;
+}
+.eyebrow__num {
+  font-family: var(--serif); font-style: italic;
+  font-weight: 400; color: var(--red); letter-spacing: 0;
+  text-transform: none; font-size: 14px;
+}
+.eyebrow--light { color: var(--white); }
+.eyebrow--light .eyebrow__num { color: var(--red); }
+
+.display {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: clamp(2.2rem, 5.4vw, 4.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  color: var(--navy);
+}
+.display--light { color: var(--white); }
+
+.ital {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--red);
+  letter-spacing: -0.005em;
+}
+.section--dark .ital { color: var(--red); }
+
+/* ============== NAV ============== */
+.nav {
+  position: fixed; inset: 0 0 auto 0; z-index: 100;
+  padding: 18px 0; transition: background .35s ease, padding .35s ease, box-shadow .35s ease;
+}
+.nav.scrolled {
+  background: rgba(4, 25, 60, 0.96);
+  padding: 12px 0;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.04), 0 12px 40px rgba(0,0,0,0.18);
+  backdrop-filter: saturate(140%) blur(8px);
+}
+.nav__inner {
+  max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter);
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+}
+.brand {
+  display: inline-flex; align-items: center; gap: 12px;
+  color: var(--white); font-weight: 800; letter-spacing: -0.02em;
+}
+.brand__mark { color: var(--red); display: inline-flex; }
+.brand__word { font-size: 18px; }
+.brand__dot { color: var(--red); }
+.brand__by {
+  display: none;
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  font-size: 12px; color: var(--on-dark-50); letter-spacing: 0;
+  margin-left: 6px; padding-left: 12px; border-left: 1px solid var(--line-light);
+}
+@media (min-width: 760px) { .brand__by { display: inline; } }
+
+.nav__links {
+  display: none; align-items: center; gap: 28px;
+}
+@media (min-width: 980px) { .nav__links { display: flex; } }
+.nav__links a {
+  font-size: 13px; font-weight: 600; letter-spacing: 0.04em;
+  color: var(--on-dark-70); transition: color .2s;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.nav__links a:hover { color: var(--white); }
+.nav__cta {
+  background: var(--red); color: var(--white) !important;
+  padding: 10px 18px; border-radius: var(--r-sm); font-weight: 700;
+}
+.nav__cta:hover { background: var(--red-deep); }
+
+.nav__menu { display: inline-flex; flex-direction: column; gap: 4px; padding: 8px; }
+.nav__menu span { width: 22px; height: 2px; background: var(--white); border-radius: 2px; }
+@media (min-width: 980px) { .nav__menu { display: none; } }
+
+/* ============== HERO ============== */
+.hero {
+  position: relative;
+  background: var(--navy);
+  color: var(--white);
+  padding: clamp(110px, 11vw, 130px) 0 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+  isolation: isolate;
+}
+.hero::before {
+  content: ""; position: absolute; inset: 0;
+  background:
+    radial-gradient(1100px 700px at 80% 20%, rgba(240, 50, 75, 0.10), transparent 60%),
+    radial-gradient(900px 600px at 10% 90%, rgba(201, 232, 251, 0.07), transparent 60%);
+  pointer-events: none;
+}
+.hero__poly { position: absolute; pointer-events: none; opacity: 0.55; z-index: 0; }
+.hero__poly--1 { top: -10%; right: -14%; width: 820px; max-width: 70vw; transform: rotate(-8deg); }
+.hero__poly--2 { bottom: -16%; left: -10%; width: 540px; max-width: 55vw; transform: rotate(12deg); }
+
+.hero__grid {
+  position: relative; z-index: 1;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: clamp(20px, 3vw, 32px);
+  padding-bottom: 0;
+}
+.hero__stage { display: flex; flex-direction: column; justify-content: center; gap: clamp(20px, 2.4vw, 32px); padding: clamp(24px, 4vw, 40px) 0; }
+
+.hero__meta {
+  display: flex; justify-content: space-between; align-items: center; gap: 24px;
+  font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--on-dark-50); border-bottom: 1px solid var(--line-light);
+  padding-bottom: 18px;
+}
+.hero__meta .eyebrow { margin-bottom: 0; }
+.hero__locator { font-family: var(--serif); font-style: italic; text-transform: none; letter-spacing: 0.02em; font-size: 13px; }
+
+.hero__title {
+  font-family: var(--sans); font-weight: 900;
+  font-size: clamp(2.6rem, 8.5vw, 7rem);
+  line-height: 0.95; letter-spacing: -0.035em;
+  color: var(--white);
+  max-width: 14ch;
+}
+.hero__line { display: block; }
+.hero__title .ital { color: var(--red); }
+
+.hero__lead {
+  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+  line-height: 1.55;
+  color: var(--on-dark-70);
+  max-width: 56ch;
+}
+.hero__lead .ital { color: var(--light-blue); }
+
+.hero__actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 8px; }
+
+.hero__chips {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 0;
+  border-top: 1px solid var(--line-light);
+  margin-top: 0;
+  align-self: end;
+}
+@media (min-width: 720px) { .hero__chips { grid-template-columns: repeat(4, 1fr); } }
+
+.chip {
+  padding: 22px 24px 22px 0;
+  border-right: 1px solid var(--line-light);
+}
+.chip:not(:first-child) { padding-left: 24px; }
+.chip:last-child { border-right: 0; }
+@media (max-width: 719px) {
+  .chip:nth-child(2n) { border-right: 0; }
+  .chip:nth-child(-n+2) { border-bottom: 1px solid var(--line-light); }
+}
+.chip dt {
+  font-size: clamp(1.4rem, 2.6vw, 2rem); font-weight: 800;
+  letter-spacing: -0.02em; color: var(--white);
+  display: flex; align-items: baseline; gap: 6px;
+}
+.chip dd {
+  margin-top: 4px;
+  font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--on-dark-50);
+}
+
+.hero__scroll {
+  position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+  display: none; flex-direction: column; align-items: center; gap: 8px;
+  color: var(--on-dark-50); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+  animation: bob 2.4s ease-in-out infinite;
+}
+@media (min-width: 980px) { .hero__scroll { display: none; } }
+@keyframes bob { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 8px); } }
+
+/* ============== BUTTONS ============== */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 16px 26px; border-radius: var(--r-sm);
+  font-weight: 700; font-size: 0.98rem; letter-spacing: 0.01em;
+  transition: background .2s, color .2s, transform .2s, box-shadow .2s, border-color .2s;
+  border: 1px solid transparent;
+}
+.btn--primary {
+  background: var(--red); color: var(--white);
+  box-shadow: 0 6px 20px rgba(240, 50, 75, 0.25);
+}
+.btn--primary:hover { background: var(--red-deep); transform: translateY(-1px); box-shadow: 0 12px 32px rgba(240, 50, 75, 0.32); }
+.btn--ghost {
+  background: transparent; color: var(--white);
+  border-color: var(--line-light);
+}
+.btn--ghost:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.3); }
+.btn--block { width: 100%; }
+
+/* ============== STRIP (pruh ze symbolů) ============== */
+.strip {
+  height: 56px;
+  background: var(--paper);
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.strip--dark { background: var(--navy); border-color: var(--line-light); }
+.strip--blue { background: var(--light-blue); border-color: rgba(4,25,60,0.10); }
+.strip__track {
+  height: 100%;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='56' viewBox='0 0 80 56'><g stroke='%2304193c' stroke-opacity='0.18' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round' fill='none'><path d='M8 38 L18 18 L28 38'/><path d='M34 18 L44 38'/></g></svg>");
+  background-repeat: repeat-x;
+  background-position: center;
+  animation: stripDrift 60s linear infinite;
+}
+.strip--dark .strip__track {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='56' viewBox='0 0 80 56'><g stroke='%23c9e8fb' stroke-opacity='0.22' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round' fill='none'><path d='M8 38 L18 18 L28 38'/><path d='M34 18 L44 38'/></g></svg>");
+}
+.strip--blue .strip__track {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='56' viewBox='0 0 80 56'><g stroke='%2304193c' stroke-opacity='0.22' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round' fill='none'><path d='M8 38 L18 18 L28 38'/><path d='M34 18 L44 38'/></g></svg>");
+}
+@keyframes stripDrift { from { background-position-x: 0; } to { background-position-x: -800px; } }
+
+/* ============== POLYGONS ============== */
+.poly { position: absolute; pointer-events: none; opacity: 0.5; z-index: 0; }
+.poly--offer { top: -8%; right: -10%; width: 600px; max-width: 55vw; transform: rotate(-6deg); }
+.poly--why { bottom: -14%; left: -12%; width: 660px; max-width: 60vw; transform: rotate(14deg); }
+.poly--formats { top: 6%; right: -12%; width: 580px; max-width: 55vw; transform: rotate(-10deg); }
+
+/* ============== DATAVIZ ============== */
+.dataviz {
+  display: grid; gap: 24px;
+  grid-template-columns: 1fr;
+  margin-bottom: 32px;
+  position: relative; z-index: 1;
+}
+@media (min-width: 760px) { .dataviz { grid-template-columns: repeat(3, 1fr); gap: 28px; } }
+
+.dataviz__card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 28px;
+  display: flex; flex-direction: column; gap: 24px;
+}
+.dataviz__head {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding-bottom: 16px; border-bottom: 1px solid var(--line);
+}
+.dataviz__num {
+  font-family: var(--serif); font-style: italic;
+  color: var(--red); font-size: 14px;
+}
+.dataviz__topic {
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink-60); font-weight: 700; text-align: right;
+}
+.dataviz__body { flex: 1; display: flex; flex-direction: column; gap: 20px; justify-content: space-between; }
+.dataviz__caption {
+  font-size: 0.98rem; line-height: 1.5; color: var(--ink-60);
+}
+
+/* horizontální bar */
+.bar {
+  position: relative; height: 56px; border-radius: 4px; overflow: hidden;
+  background: var(--paper-warm);
+  display: flex; align-items: center;
+}
+.bar__fill {
+  position: absolute; inset: 0 auto 0 0; width: var(--p);
+  background: linear-gradient(90deg, var(--red) 0%, var(--red-deep) 100%);
+  transform-origin: left;
+  animation: barGrow 1.4s cubic-bezier(.2,.8,.2,1) both;
+}
+@keyframes barGrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.bar__label {
+  position: relative; z-index: 2; padding: 0 18px;
+  color: var(--white); font-weight: 700; font-size: 0.95rem;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  display: inline-flex; align-items: baseline; gap: 6px;
+  mix-blend-mode: normal;
+}
+.bar__label strong {
+  font-size: 1.6rem; font-weight: 800; letter-spacing: -0.02em;
+}
+
+/* horizontální ruler */
+.ruler { position: relative; padding-top: 12px; }
+.ruler__bar {
+  position: relative; height: 8px; background: var(--paper-warm); border-radius: 99px; overflow: hidden;
+}
+.ruler__zone {
+  position: absolute; left: 0; top: 0; bottom: 0; width: 45.83%;
+  background: linear-gradient(90deg, var(--red), var(--orange));
+  animation: barGrow 1.4s cubic-bezier(.2,.8,.2,1) both;
+}
+.ruler__ticks {
+  display: flex; justify-content: space-between; margin-top: 10px;
+  font-size: 11px; letter-spacing: 0.05em; color: var(--ink-40);
+  font-variant-numeric: tabular-nums;
+}
+.ruler__pin {
+  position: absolute; top: 0; left: var(--p); transform: translate(-50%, -8px);
+}
+.ruler__pin span {
+  display: inline-block;
+  background: var(--navy); color: var(--white);
+  padding: 6px 12px; border-radius: 4px;
+  font-size: 0.85rem; font-weight: 700;
+  position: relative;
+  white-space: nowrap;
+}
+.ruler__pin span::after {
+  content: ""; position: absolute; bottom: -5px; left: 50%; transform: translateX(-50%);
+  width: 0; height: 0; border: 5px solid transparent; border-top-color: var(--navy); border-bottom: 0;
+}
+.ruler__pin strong {
+  font-size: 1.1rem; font-weight: 800; margin-right: 4px; letter-spacing: -0.01em;
+}
+
+/* donut */
+.donut { position: relative; width: 180px; height: 180px; margin: 0 auto; }
+.donut svg { width: 100%; height: 100%; }
+.donut__arc {
+  stroke-dasharray: 0 314.16;
+  animation: donutFill 1.4s cubic-bezier(.2,.8,.2,1) forwards;
+}
+@keyframes donutFill { to { stroke-dasharray: 94.25 314.16; } }
+.donut__center {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 2px;
+}
+.donut__center strong {
+  font-size: 2.2rem; font-weight: 900; letter-spacing: -0.03em; color: var(--navy);
+}
+.donut__center span {
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-60); font-weight: 700;
+}
+
+/* alternativní stats varianty (Tweaks) */
+[data-stats-mode="big"] .dataviz__card { padding: 36px 28px; }
+[data-stats-mode="big"] .bar,
+[data-stats-mode="big"] .ruler,
+[data-stats-mode="big"] .donut { display: none; }
+[data-stats-mode="big"] .dataviz__body::before {
+  content: attr(data-big);
+  font-size: clamp(3.2rem, 7vw, 5.4rem); font-weight: 900;
+  color: var(--navy); letter-spacing: -0.04em; line-height: 1;
+}
+
+[data-stats-mode="minimal"] .dataviz__card { background: transparent; border: 0; padding: 0; }
+[data-stats-mode="minimal"] .dataviz__head { border-bottom-color: var(--line); }
+
+.source {
+  font-family: var(--serif); font-style: italic;
+  font-size: 0.92rem; color: var(--ink-50);
+  text-align: center; margin-top: 8px;
+}
+.source a { color: var(--red); border-bottom: 1px solid rgba(240,50,75,0.3); }
+.source a:hover { border-bottom-color: var(--red); }
+
+/* ============== PILLARS ============== */
+.pillars {
+  list-style: none; counter-reset: pil;
+  display: grid; gap: 1px; background: var(--line-light);
+  border: 1px solid var(--line-light);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  position: relative; z-index: 1;
+}
+@media (min-width: 900px) { .pillars { grid-template-columns: repeat(3, 1fr); } }
+
+.pillar {
+  background: var(--navy);
+  padding: 36px 32px;
+  display: flex; flex-direction: column; gap: 20px;
+  position: relative;
+  transition: background .3s ease;
+}
+.pillar:hover { background: var(--navy-90); }
+.pillar__rail span {
+  font-family: var(--serif); font-style: italic;
+  font-size: 14px; color: var(--red);
+}
+.pillar__rail::before {
+  content: ""; display: block; width: 32px; height: 2px;
+  background: var(--red); margin-bottom: 10px;
+}
+.pillar__title {
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem); font-weight: 800;
+  letter-spacing: -0.02em; color: var(--white); line-height: 1.1;
+}
+.pillar__desc {
+  color: var(--on-dark-70); font-size: 0.98rem; line-height: 1.65;
+}
+.pillar__tags {
+  list-style: none; display: flex; flex-wrap: wrap; gap: 6px;
+  margin-top: auto; padding-top: 12px;
+  border-top: 1px solid var(--line-light);
+}
+.pillar__tags li {
+  font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--orange); padding: 5px 10px; border: 1px solid rgba(255, 160, 0, 0.3);
+  border-radius: 4px; font-weight: 700;
+}
+
+.callout {
+  margin-top: 56px;
+  display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start;
+  padding: 22px 26px;
+  border-left: 3px solid var(--orange);
+  background: rgba(255, 160, 0, 0.06);
+  border-radius: 4px;
+}
+.callout__pill {
+  font-family: var(--serif); font-style: italic; color: var(--orange);
+  font-size: 14px;
+}
+.callout p { color: var(--on-dark-70); line-height: 1.65; }
+.callout p .ital { color: var(--white); }
+
+/* ============== AUDIENCE ============== */
+.audience {
+  list-style: none;
+  border-top: 1px solid rgba(4,25,60,0.18);
+}
+.audience__row {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 12px 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(4,25,60,0.18);
+  align-items: baseline;
+  transition: background .25s, padding-left .25s;
+}
+.audience__row:hover { padding-left: 12px; background: rgba(255,255,255,0.4); }
+@media (min-width: 760px) {
+  .audience__row {
+    grid-template-columns: 56px 1.4fr 2fr auto;
+    align-items: baseline;
+    padding: 28px 0;
+  }
+}
+.audience__num {
+  font-family: var(--serif); font-style: italic;
+  font-size: 1.05rem; color: var(--red);
+}
+.audience__name {
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem); font-weight: 800;
+  letter-spacing: -0.015em; color: var(--navy);
+}
+.audience__note {
+  color: var(--ink-60); font-size: 0.98rem; line-height: 1.5;
+  grid-column: 2 / -1;
+}
+@media (min-width: 760px) { .audience__note { grid-column: auto; } }
+.audience__badge {
+  display: none;
+}
+@media (min-width: 760px) {
+  .audience__badge { justify-self: end; grid-column: auto; }
+}
+
+/* Audience: cards mode */
+[data-audience-mode="cards"] {
+  display: grid; gap: 16px; border-top: 0;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 600px) { [data-audience-mode="cards"] { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 980px) { [data-audience-mode="cards"] { grid-template-columns: repeat(3, 1fr); } }
+[data-audience-mode="cards"] .audience__row {
+  display: flex; flex-direction: column; gap: 12px;
+  padding: 24px;
+  border: 1px solid rgba(4,25,60,0.14);
+  border-radius: var(--r-md);
+  background: var(--white);
+  align-items: stretch;
+  min-height: 200px;
+  transition: transform .25s, box-shadow .25s, border-color .25s;
+}
+[data-audience-mode="cards"] .audience__note {
+  flex-grow: 1;
+}
+[data-audience-mode="cards"] .audience__row:hover {
+  padding: 24px; transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(4,25,60,0.08);
+  border-color: rgba(240,50,75,0.35); background: var(--white);
+}
+[data-audience-mode="cards"] .audience__num {
+  font-size: 0.85rem; letter-spacing: 0.16em; text-transform: uppercase;
+  font-family: var(--sans); font-style: normal; font-weight: 700;
+}
+[data-audience-mode="cards"] .audience__name { font-size: 1.25rem; }
+[data-audience-mode="cards"] .audience__note { grid-column: auto; margin-top: 4px; }
+[data-audience-mode="cards"] .audience__badge {
+  align-self: flex-start; justify-self: start;
+  margin-top: auto; grid-column: auto;
+  background: var(--light-blue); padding: 5px 12px;
+}
+
+/* ============== WHY ============== */
+.why {
+  display: grid; gap: clamp(40px, 5vw, 64px);
+  grid-template-columns: 1fr;
+  position: relative; z-index: 1;
+}
+@media (min-width: 900px) { .why { grid-template-columns: 1.05fr 1fr; align-items: start; } }
+
+.why__quote {
+  border-left: 3px solid var(--red);
+  padding: 8px 0 8px 28px;
+}
+.why__quote blockquote {
+  font-family: var(--serif); font-style: italic;
+  font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+  line-height: 1.4; color: var(--navy);
+  margin-bottom: 24px;
+}
+.why__quote blockquote .ital { color: var(--red); }
+.why__quote figcaption {
+  display: flex; flex-direction: column; gap: 2px;
+  font-size: 0.92rem; color: var(--ink-60);
+}
+.why__quote figcaption strong {
+  color: var(--navy); font-weight: 700; font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+.why__link {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 32px;
+  font-size: 0.95rem; font-weight: 700;
+  color: var(--red); text-decoration: none;
+  border-bottom: 1px solid rgba(240,50,75,0.3);
+  padding-bottom: 4px;
+  align-self: flex-start;
+  transition: gap .25s, border-color .25s;
+}
+.why__link:hover { gap: 12px; border-color: var(--red); }
+.why__quote { display: flex; flex-direction: column; }
+
+.why__list {
+  list-style: none;
+  display: grid; grid-template-columns: 1fr; gap: 0;
+  border-top: 1px solid var(--line);
+}
+@media (min-width: 600px) { .why__list { grid-template-columns: 1fr 1fr; gap: 0; } }
+
+.why__list li {
+  display: grid; grid-template-columns: 90px 1fr; gap: 16px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+@media (min-width: 600px) {
+  .why__list li:nth-child(2n) { border-left: 1px solid var(--line); padding-left: 24px; }
+}
+.why__num {
+  font-size: clamp(2rem, 3vw, 2.6rem); font-weight: 900;
+  color: var(--navy); letter-spacing: -0.04em; line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.why__list h3 {
+  font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-60); font-weight: 700; margin-bottom: 6px;
+}
+.why__list p { font-size: 0.95rem; line-height: 1.55; color: var(--ink-60); }
+
+/* ============== FORMATS ============== */
+.formats {
+  display: grid; gap: 24px;
+  grid-template-columns: 1fr;
+  position: relative; z-index: 1;
+}
+@media (min-width: 900px) { .formats { grid-template-columns: 1fr 1.1fr 1fr; gap: 28px; } }
+
+.format {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--line-light);
+  border-radius: var(--r-md);
+  padding: 32px;
+  display: flex; flex-direction: column; gap: 20px;
+  transition: border-color .25s, transform .25s, background .25s;
+}
+.format:hover { border-color: rgba(201,232,251,0.4); background: rgba(255,255,255,0.05); transform: translateY(-2px); }
+.format--featured {
+  background: linear-gradient(160deg, rgba(240, 50, 75, 0.10) 0%, transparent 60%);
+  border-color: rgba(240, 50, 75, 0.35);
+}
+.format header {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px;
+  padding-bottom: 18px; border-bottom: 1px solid var(--line-light);
+  position: relative;
+}
+.format__time {
+  font-family: var(--serif); font-style: italic;
+  color: var(--orange); font-size: 14px;
+}
+.format__pin {
+  margin-left: auto;
+  align-self: flex-start;
+  font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700;
+  background: var(--red); color: var(--white);
+  padding: 4px 10px; border-radius: 4px;
+  white-space: nowrap;
+}
+.format h3 {
+  font-size: clamp(1.5rem, 2.2vw, 1.8rem); font-weight: 800;
+  letter-spacing: -0.02em; color: var(--white);
+  flex-basis: 100%;
+}
+.format > p { color: var(--on-dark-70); line-height: 1.65; }
+
+.format__meta {
+  list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+  margin-top: auto; padding-top: 18px;
+  border-top: 1px solid var(--line-light);
+}
+.format__meta li {
+  font-size: 0.85rem; color: var(--white);
+  display: flex; flex-direction: column; gap: 2px;
+}
+.format__meta li span {
+  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--on-dark-50); font-weight: 700;
+}
+
+.format__sublist {
+  list-style: none; display: flex; flex-direction: column;
+  margin-top: auto;
+}
+.format__sublist li {
+  padding: 14px 0;
+  border-top: 1px solid var(--line-light);
+  display: flex; flex-direction: column; gap: 4px;
+}
+.format__sublist li strong {
+  font-size: 0.95rem; color: var(--white); font-weight: 700;
+  letter-spacing: 0.005em;
+}
+.format__sublist li span {
+  font-size: 0.85rem; color: var(--on-dark-50); line-height: 1.5;
+}
+
+/* ============== CONTACT ============== */
+.contact {
+  display: grid; gap: clamp(40px, 6vw, 80px);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 900px) { .contact { grid-template-columns: 1fr 1.1fr; align-items: start; } }
+
+.contact__intro .display { margin-bottom: 24px; }
+.person {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 20px;
+  align-items: center;
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.person__photo {
+  width: 96px; height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--light-blue);
+  filter: grayscale(0.15);
+}
+.person__body { display: flex; flex-direction: column; gap: 4px; }
+.person__role {
+  font-family: var(--serif); font-style: italic;
+  font-size: 13px; color: var(--red);
+  margin-bottom: 4px;
+}
+.person__name {
+  font-size: 1.15rem; font-weight: 800;
+  color: var(--navy); letter-spacing: -0.01em;
+}
+.person__title {
+  font-size: 0.92rem; color: var(--ink-60);
+  margin-bottom: 6px;
+}
+.person__contact {
+  list-style: none; display: flex; flex-direction: column; gap: 2px;
+  font-size: 0.95rem;
+}
+.person__contact a {
+  color: var(--navy); font-weight: 600; transition: color .2s;
+}
+.person__contact a:hover { color: var(--red); }
+
+.contact__direct {
+  list-style: none; margin-top: 40px;
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 0;
+  border-top: 1px solid var(--line);
+}
+.contact__direct li {
+  padding: 20px 0; border-bottom: 1px solid var(--line);
+  display: flex; flex-direction: column; gap: 6px;
+}
+.contact__direct li:nth-child(2n-1) {
+  padding-right: 16px; border-right: 1px solid var(--line);
+}
+.contact__direct li:nth-child(2n) { padding-left: 16px; }
+.contact__label {
+  font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink-60); font-weight: 700;
+}
+.contact__direct a {
+  font-size: 1.05rem; font-weight: 600; color: var(--navy);
+  transition: color .2s;
+}
+.contact__direct a:hover { color: var(--red); }
+
+.contact__form {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: clamp(28px, 4vw, 40px);
+}
+.field { display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; }
+.field-row {
+  display: grid; grid-template-columns: 1fr; gap: 18px;
+}
+@media (min-width: 600px) { .field-row { grid-template-columns: 1fr 1fr; gap: 16px; } }
+.field-row .field { margin-bottom: 18px; }
+
+.field label, .field legend {
+  font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+  font-weight: 700; color: var(--navy);
+}
+.field input, .field textarea {
+  padding: 14px 16px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--paper);
+  font-size: 1rem; color: var(--navy);
+  transition: border-color .2s, background .2s;
+  width: 100%;
+}
+.field input:focus, .field textarea:focus {
+  outline: none; border-color: var(--red); background: var(--white);
+}
+.field textarea { resize: vertical; min-height: 110px; line-height: 1.5; }
+
+.field--radios { border: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.field--radios > div, .field--radios > label { display: inline-flex; }
+.field--radios > div { flex-wrap: wrap; gap: 8px; }
+.field--radios label {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 14px;
+  border: 1.5px solid var(--line); border-radius: 99px;
+  font-size: 0.9rem; font-weight: 600; letter-spacing: 0;
+  text-transform: none; color: var(--navy);
+  cursor: pointer; transition: border-color .2s, background .2s;
+}
+.field--radios label:has(input:checked) { border-color: var(--red); background: rgba(240,50,75,0.08); }
+.field--radios input { position: absolute; opacity: 0; pointer-events: none; }
+.field--radios { flex-direction: row; flex-wrap: wrap; }
+.field--radios legend { width: 100%; margin-bottom: 6px; }
+
+.form__legal {
+  font-size: 0.78rem; color: var(--ink-50); margin-top: 14px; line-height: 1.5;
+}
+.form__legal a { color: var(--red); text-decoration: underline; text-decoration-color: rgba(240,50,75,0.3); }
+
+/* ============== FOOTER ============== */
+.footer {
+  background: var(--navy);
+  color: var(--on-dark-70);
+  padding: 64px 0 32px;
+  border-top: 1px solid var(--line-light);
+}
+.footer__inner {
+  display: grid; gap: 40px;
+  grid-template-columns: 1fr;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--line-light);
+}
+@media (min-width: 760px) { .footer__inner { grid-template-columns: 1.4fr 2fr; gap: 64px; } }
+
+.footer__brand .brand__word { color: var(--white); font-size: 1.3rem; font-weight: 800; }
+.footer__brand p {
+  margin-top: 12px; max-width: 360px;
+  font-size: 0.92rem; color: var(--on-dark-50); line-height: 1.6;
+}
+
+.footer__nav {
+  display: grid; gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+.footer__nav h4 {
+  font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--white); margin-bottom: 14px; font-weight: 700;
+}
+.footer__nav a {
+  display: block; font-size: 0.92rem;
+  color: var(--on-dark-70); padding: 4px 0; transition: color .2s;
+}
+.footer__nav a:hover { color: var(--white); }
+
+.footer__base {
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  padding-top: 28px;
+  font-size: 0.82rem; color: var(--on-dark-50);
+  letter-spacing: 0.02em;
+}
+
+/* ============== REVEAL ============== */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .8s ease; }
+.reveal.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1 !important; transform: none !important; }
+  .strip__track, .bar__fill, .ruler__zone, .donut__arc, .hero__scroll { animation: none !important; }
+}
+
+/* ============== TWEAKS PANEL ============== */
+.tweaks {
+  position: fixed; right: 20px; bottom: 20px; z-index: 200;
+  width: 320px; background: var(--white); color: var(--navy);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 64px rgba(4,25,60,0.18);
+  overflow: hidden;
+  font-size: 13px;
+  display: none;
+}
+.tweaks.is-open { display: block; }
+.tweaks__head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 16px; border-bottom: 1px solid var(--line);
+  background: var(--navy); color: var(--white);
+}
+.tweaks__title { font-weight: 800; letter-spacing: 0.04em; font-size: 12px; text-transform: uppercase; }
+.tweaks__close { color: var(--white); padding: 4px; line-height: 0; }
+.tweaks__body { padding: 16px; display: flex; flex-direction: column; gap: 18px; }
+.tweaks__group { display: flex; flex-direction: column; gap: 8px; }
+.tweaks__label {
+  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-60); font-weight: 700;
+}
+.tweaks__seg {
+  display: grid; grid-auto-flow: column; grid-auto-columns: 1fr;
+  border: 1px solid var(--line); border-radius: 999px; overflow: hidden;
+}
+.tweaks__seg button {
+  padding: 8px 10px; font-size: 12px; font-weight: 600;
+  background: transparent; color: var(--ink-60);
+  border-right: 1px solid var(--line);
+  transition: background .2s, color .2s;
+}
+.tweaks__seg button:last-child { border-right: 0; }
+.tweaks__seg button.is-active { background: var(--navy); color: var(--white); }
+
+</style>
 </head>
 <body>
 
-<!-- ===== NAV ===== -->
-<nav class="nav" id="nav">
+<a class="skip" href="#main">Přeskočit na obsah</a>
+
+<header class="nav" id="nav" role="banner">
+  <div class="nav__inner">
+    <a href="#top" class="brand" aria-label="generace.work – domů">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 18 L8 6 L14 18" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M16 6 L22 18" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity=".55"/>
+        </svg>
+      </span>
+      <span class="brand__word">generace<span class="brand__dot">.</span>work</span>
+    </a>
+    <nav class="nav__links" aria-label="Hlavní navigace">
+      <a href="#problem">01 – Kontext</a>
+      <a href="#offer">02 – Co děláme</a>
+      <a href="#why">03 – Proč my</a>
+      <a href="#formats">04 – Formáty</a>
+      <a href="#contact" class="nav__cta">Domluvit hovor</a>
+    </nav>
+    <button class="nav__menu" type="button" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============== HERO ============== -->
+<section id="top" class="hero" aria-label="Úvod">
+  <div class="hero__poly hero__poly--1" aria-hidden="true">
+    <svg viewBox="0 0 600 600" preserveAspectRatio="none"><polygon points="180,40 575,90 545,400 380,580 60,510" fill="none" stroke="rgba(201,232,251,0.4)" stroke-width="1"/></svg>
+  </div>
+
+  <div class="container hero__grid">
+    <div class="hero__stage">
+    <h1 class="hero__title">
+      <span class="hero__line">Rozumíme</span>
+      <span class="hero__line">generaci, kterou</span>
+      <span class="hero__line"><em class="ital">potřebujete</em>.</span>
+    </h1>
+
+    <p class="hero__lead" data-hero-copy>
+      Pomůžeme vám ji <em class="ital">pochopit</em>, <em class="ital">získat</em> i <em class="ital">udržet</em>.
+      Stavíme na 15 letech vlastních dat z českého prostředí – ne na zahraničních trendech.
+    </p>
+
+    <div class="hero__actions">
+      <a href="#contact" class="btn btn--primary">Domluvit úvodní hovor
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#offer" class="btn btn--ghost">Co konkrétně děláme</a>
+    </div>
+    </div>
+
+    <dl class="hero__chips" aria-label="Hlavní fakta">
+      <div class="chip"><dt>15 let</dt><dd>vlastních dat</dd></div>
+      <div class="chip"><dt>10 000+</dt><dd>respondentů</dd></div>
+      <div class="chip"><dt>500+</dt><dd>partnerských škol</dd></div>
+      <div class="chip"><dt>20+</dt><dd>průzkumů</dd></div>
+    </dl>
+  </div>
+
+  <div class="hero__scroll" aria-hidden="true">
+    <span>Scroll</span>
+    <svg width="14" height="40" viewBox="0 0 14 40"><path d="M7 2 V36 M2 30 L7 36 L12 30" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+</section>
+
+<!-- pruh ze symbolů -->
+<div class="strip strip--dark" aria-hidden="true"><div class="strip__track"></div></div>
+
+<!-- ============== KONTEXT ============== -->
+<section id="problem" class="section section--light">
   <div class="container">
-    <a href="#hero" class="nav-logo">generace<span>.</span>work</a>
-    <ul class="nav-links">
-      <li><a href="#problem">Co se děje</a></li>
-      <li><a href="#pillars">Nabídka</a></li>
-      <li><a href="#why">Proč my</a></li>
-      <li><a href="#formats">Formáty</a></li>
-      <li><a href="#contact" class="nav-cta">Kontakt</a></li>
+    <header class="section__head">
+      <span class="eyebrow"><span class="eyebrow__num">/ 01</span> Kontext</span>
+      <h2 class="display">
+        Generace Z mění <em class="ital">pravidla.</em><br/>
+        Většina firem neví, <em class="ital">jak reagovat.</em>
+      </h2>
+      <p class="section__lede">
+        Tři čísla, která HR ředitelé v Česku slyší nejčastěji od kolegů z byznysu – a na která
+        zatím nemají odpověď. Naše data ukazují, kde je největší tlak.
+      </p>
+    </header>
+
+    <!-- Datavisualizace -->
+    <div class="dataviz" data-stats-mode="bars">
+      <article class="dataviz__card">
+        <header class="dataviz__head">
+          <span class="dataviz__num">01</span>
+          <span class="dataviz__topic">Mezera v porozumění</span>
+        </header>
+        <div class="dataviz__body">
+          <div class="bar" style="--p: 73%">
+            <span class="bar__fill"></span>
+            <span class="bar__rest"></span>
+            <span class="bar__label"><strong>73&thinsp;%</strong> firem</span>
+          </div>
+          <p class="dataviz__caption">…říká, že <em class="ital">nerozumí</em> svým nejmladším zaměstnancům.</p>
+        </div>
+      </article>
+
+      <article class="dataviz__card">
+        <header class="dataviz__head">
+          <span class="dataviz__num">02</span>
+          <span class="dataviz__topic">Doba setrvání u 1. zaměstnavatele</span>
+        </header>
+        <div class="dataviz__body">
+          <div class="ruler">
+            <div class="ruler__bar"><span class="ruler__zone"></span></div>
+            <div class="ruler__ticks" aria-hidden="true">
+              <span>0</span><span>6</span><span>12</span><span>18</span><span>24 měs.</span>
+            </div>
+            <div class="ruler__pin" style="--p: 45.83%"><span><strong>11</strong> měsíců</span></div>
+          </div>
+          <p class="dataviz__caption">Průměr Gen&nbsp;Z. Pro srovnání: <em class="ital">Millennials 2,3 roku.</em></p>
+        </div>
+      </article>
+
+      <article class="dataviz__card">
+        <header class="dataviz__head">
+          <span class="dataviz__num">03</span>
+          <span class="dataviz__topic">Pracovní síla v 2030</span>
+        </header>
+        <div class="dataviz__body">
+          <div class="donut" role="img" aria-label="30 % pracovní síly bude tvořit Gen Z">
+            <svg viewBox="0 0 120 120">
+              <circle cx="60" cy="60" r="50" stroke="rgba(4,25,60,.08)" stroke-width="14" fill="none"/>
+              <circle class="donut__arc" cx="60" cy="60" r="50" stroke="var(--red)" stroke-width="14" fill="none"
+                      stroke-dasharray="94.25 314.16" stroke-linecap="butt"
+                      transform="rotate(-90 60 60)"/>
+            </svg>
+            <div class="donut__center"><strong>30&thinsp;%</strong><span>Gen Z</span></div>
+          </div>
+          <p class="dataviz__caption">…pracovní síly bude do roku 2030 tvořit <em class="ital">generace Z.</em></p>
+        </div>
+      </article>
+    </div>
+
+    <p class="source">
+      Zdroj: vlastní průzkumy <em class="ital">Než zazvoní</em>, 2017–2026 ·
+      <a href="https://www.nezzazvoni.cz/pruzkumy-a-data/" target="_blank" rel="noopener">nezzazvoni.cz/pruzkumy-a-data</a>
+    </p>
+  </div>
+</section>
+
+<div class="strip" aria-hidden="true"><div class="strip__track"></div></div>
+
+<!-- ============== NABÍDKA ============== -->
+<section id="offer" class="section section--dark">
+  <div class="poly poly--offer" aria-hidden="true">
+    <svg viewBox="0 0 500 500" preserveAspectRatio="none"><polygon points="160,20 480,70 460,360 290,490 30,420" fill="none" stroke="rgba(201,232,251,0.28)" stroke-width="1"/></svg>
+  </div>
+  <div class="container">
+    <header class="section__head">
+      <span class="eyebrow eyebrow--light"><span class="eyebrow__num">/ 02</span> Co děláme</span>
+      <h2 class="display display--light">
+        Tři pilíře.<br/>
+        Jeden cíl: <em class="ital">funkční tým napříč generacemi.</em>
+      </h2>
+    </header>
+
+    <ol class="pillars" aria-label="Tři pilíře spolupráce">
+      <li class="pillar">
+        <div class="pillar__rail"><span>01</span></div>
+        <div class="pillar__body">
+          <h3 class="pillar__title"><em class="ital">Pochopte</em> je</h3>
+          <p class="pillar__desc">
+            Najděte s generací Z společnou řeč. Co je motivuje, co od práce čekají,
+            proč mlčí na poradách a co znamená „flexibilita“ pro člověka, kterému je 22.
+          </p>
+          <ul class="pillar__tags">
+            <li>Keynote</li><li>Workshop</li><li>Interní školení</li>
+          </ul>
+        </div>
+      </li>
+      <li class="pillar">
+        <div class="pillar__rail"><span>02</span></div>
+        <div class="pillar__body">
+          <h3 class="pillar__title"><em class="ital">Získejte</em> je</h3>
+          <p class="pillar__desc">
+            Kde a jak figurovat, aby si vás všimli. Jaké kanály opravdu fungují,
+            co rozhoduje při výběru zaměstnavatele a kde dělá employer branding nejvíc chyb.
+          </p>
+          <ul class="pillar__tags">
+            <li>Workshop</li><li>Audit</li><li>Konzultace</li>
+          </ul>
+        </div>
+      </li>
+      <li class="pillar">
+        <div class="pillar__rail"><span>03</span></div>
+        <div class="pillar__body">
+          <h3 class="pillar__title"><em class="ital">Udržte si</em> je</h3>
+          <p class="pillar__desc">
+            Konkrétní kroky k retenci. Jak snížit fluktuaci, jak vést mezigenerační tým
+            a co dělat, když lidi odcházejí dřív, než se stačí zaučit.
+          </p>
+          <ul class="pillar__tags">
+            <li>Strategie</li><li>Konzultace</li><li>Mentoring</li>
+          </ul>
+        </div>
+      </li>
+    </ol>
+
+    <aside class="callout">
+      <span class="callout__pill">Pozor</span>
+      <p>Nepřebíráme zahraniční trendy. <em class="ital">Česká data, český kontext, česká rozhodnutí</em> – protože „Gen Z v USA“ a „Gen Z v Plzni“ jsou dvě různé skupiny.</p>
+    </aside>
+  </div>
+</section>
+
+<div class="strip strip--dark" aria-hidden="true"><div class="strip__track"></div></div>
+
+<!-- ============== PRO KOHO ============== -->
+<section id="audience" class="section section--blue">
+  <div class="container">
+    <header class="section__head section__head--split">
+      <div>
+        <span class="eyebrow"><span class="eyebrow__num">/ 03</span> Pro koho</span>
+        <h2 class="display">Pomáháme tam, kde pracují <em class="ital">mladí.</em></h2>
+      </div>
+      <p class="section__aside">
+        Šest segmentů, ve kterých máme nejhlubší data. Pokud váš obor mezi nimi není,
+        pravděpodobně pro vás máme alespoň relevantní benchmark.
+      </p>
+    </header>
+
+    <ul class="audience" data-audience-mode="cards">
+      <li class="audience__row">
+        <span class="audience__num">01</span>
+        <h3 class="audience__name">Výroba a průmysl</h3>
+        <p class="audience__note">Nábor technických pozic, kde mladých chybí nejvíc.</p>
+        <span class="audience__badge">Top fokus</span>
+      </li>
+      <li class="audience__row">
+        <span class="audience__num">02</span>
+        <h3 class="audience__name">Banky a korporace</h3>
+        <p class="audience__note">Retence mladých talentů, snižování fluktuace v prvním roce.</p>
+        <span class="audience__badge">Retence</span>
+      </li>
+      <li class="audience__row">
+        <span class="audience__num">03</span>
+        <h3 class="audience__name">Nemocnice a zdravotnictví</h3>
+        <p class="audience__note">Proč mladí utíkají do zahraničí a co je může přimět zůstat.</p>
+        <span class="audience__badge">Veřejný sektor</span>
+      </li>
+      <li class="audience__row">
+        <span class="audience__num">04</span>
+        <h3 class="audience__name">Vysoké školy</h3>
+        <p class="audience__note">Jak studenty oslovit, udržet v oboru a propojit s praxí.</p>
+        <span class="audience__badge">Vzdělávání</span>
+      </li>
+      <li class="audience__row">
+        <span class="audience__num">05</span>
+        <h3 class="audience__name">Stavebnictví a logistika</h3>
+        <p class="audience__note">Obory s největším demografickým propadem mladých.</p>
+        <span class="audience__badge">Akutní</span>
+      </li>
+      <li class="audience__row">
+        <span class="audience__num">06</span>
+        <h3 class="audience__name">Veřejná správa</h3>
+        <p class="audience__note">Modernizace, digitalizace a generační výměna v úřadech.</p>
+        <span class="audience__badge">Transformace</span>
+      </li>
     </ul>
   </div>
-</nav>
+</section>
 
-<!-- ===== 1. HERO ===== -->
-<section id="hero">
-  <!-- Polygon decorations -->
-  <div class="polygon polygon-hero-1">
-    <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="200,20 380,150 340,370 60,370 20,150" fill="rgba(201,232,251,0.06)" stroke="rgba(201,232,251,0.12)" stroke-width="1"/>
-    </svg>
-  </div>
-  <div class="polygon polygon-hero-2">
-    <svg viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="150,10 290,90 270,270 30,270 10,90" fill="rgba(201,232,251,0.04)" stroke="rgba(201,232,251,0.1)" stroke-width="1"/>
-    </svg>
-  </div>
-  <div class="polygon polygon-hero-3">
-    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="100,5 195,65 170,185 30,185 5,65" fill="rgba(201,232,251,0.05)" stroke="rgba(201,232,251,0.1)" stroke-width="1"/>
-    </svg>
-  </div>
+<div class="strip strip--blue" aria-hidden="true"><div class="strip__track"></div></div>
 
+<!-- ============== PROČ MY ============== -->
+<section id="why" class="section section--light">
+  <div class="poly poly--why" aria-hidden="true">
+    <svg viewBox="0 0 500 500" preserveAspectRatio="none"><polygon points="40,90 380,40 490,310 320,470 60,400" fill="none" stroke="rgba(4,25,60,0.45)" stroke-width="1"/></svg>
+  </div>
   <div class="container">
-    <div class="hero-content">
-      <span class="hero-tag">generace.work</span>
-      <h1>Rozumíme generaci,<br>kterou <span class="accent">potřebujete.</span></h1>
-      <p>Pomůžeme vám ji pochopit, získat i udržet.</p>
-      <p class="hero-tagline"><strong>Česká data. Český kontext. Česká rozhodnutí.</strong></p>
-      <a href="#contact" class="btn-primary">Chci vědět víc</a>
+    <header class="section__head">
+      <span class="eyebrow"><span class="eyebrow__num">/ 04</span> Proč my</span>
+      <h2 class="display">
+        15 let mezi mladými.<br/>
+        To je naše <em class="ital">nečekaná výhoda.</em>
+      </h2>
+    </header>
+
+    <div class="why">
+      <figure class="why__quote">
+        <blockquote>
+          Než zazvoní není konzultantská značka, která si načetla studie. Jsme lidé,
+          kteří 15 let chodí <em class="ital">přímo mezi mladé</em> – do škol, na kampusy, do
+          jejich kanceláří v jejich prvním roce.
+        </blockquote>
+        <figcaption>
+          <strong>Jakub Roh</strong>
+          <span>jednatel · Než zazvoní</span>
+        </figcaption>
+        <a href="https://www.nezzazvoni.cz/pruzkumy-a-data/" class="why__link" target="_blank" rel="noopener">
+          Prohlédněte si naše průzkumy a data
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </figure>
+
+      <ol class="why__list">
+        <li>
+          <span class="why__num">15</span>
+          <div>
+            <h3>let na poli</h3>
+            <p>Od 2011. Od malých středních škol po velké korporace. Bez prázdnin.</p>
+          </div>
+        </li>
+        <li>
+          <span class="why__num">500+</span>
+          <div>
+            <h3>spolupracujících škol</h3>
+            <p>Kompletní pokrytí ČR – od Aše po Jablunkov, od gymnázií po SOUky.</p>
+          </div>
+        </li>
+        <li>
+          <span class="why__num">10K+</span>
+          <div>
+            <h3>respondentů ročně</h3>
+            <p>Jediná longitudinální datová sada o české Gen Z s metodologickou kontinuitou.</p>
+          </div>
+        </li>
+        <li>
+          <span class="why__num">100%</span>
+          <div>
+            <h3>výhradně český kontext</h3>
+            <p>Žádné překlady McKinsey reportů. Naše čísla popisují vaši realitu.</p>
+          </div>
+        </li>
+      </ol>
     </div>
   </div>
 </section>
 
-<!-- /// divider -->
-<div class="divider divider--dark" aria-hidden="true">
-  <div class="divider-inner">/// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// ///</div>
-</div>
+<div class="strip" aria-hidden="true"><div class="strip__track"></div></div>
 
-<!-- ===== 2. PROBLÉM ===== -->
-<section id="problem">
-  <div class="polygon polygon-stats polygon">
-    <svg viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="125,10 240,80 210,230 40,230 10,80" fill="var(--poly-blue)" stroke="var(--poly-stroke)" stroke-width="1"/>
-    </svg>
+<!-- ============== FORMÁTY ============== -->
+<section id="formats" class="section section--dark">
+  <div class="poly poly--formats" aria-hidden="true">
+    <svg viewBox="0 0 500 500" preserveAspectRatio="none"><polygon points="180,30 470,100 450,380 250,480 40,360" fill="none" stroke="rgba(201,232,251,0.22)" stroke-width="1"/></svg>
   </div>
-
   <div class="container">
-    <div class="fade-in">
-      <p class="section-label">Co se děje</p>
-      <h2 class="section-heading">Generace Z mění pravidla.<br>Většina firem neví, <span class="accent">jak reagovat.</span></h2>
-    </div>
+    <header class="section__head">
+      <span class="eyebrow eyebrow--light"><span class="eyebrow__num">/ 05</span> Formáty spolupráce</span>
+      <h2 class="display display--light">Vyberte si, co vám <em class="ital">sedí.</em></h2>
+    </header>
 
-    <div class="stats-grid fade-in-children">
-      <div class="stat-card">
-        <div class="stat-number">73<span>&thinsp;%</span></div>
-        <p class="stat-text">firem říká, že nerozumí svým nejmladším zaměstnancům.</p>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">11</div>
-        <p class="stat-text">měsíců - průměrná doba setrvání Gen&nbsp;Z u prvního zaměstnavatele.</p>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">30<span>&thinsp;%</span></div>
-        <p class="stat-text">pracovní síly bude do roku 2030 tvořit generace Z.</p>
-      </div>
-    </div>
-
-    <p class="stats-source fade-in">Zdroj: vlastní průzkumy Než zazvoní, 2017–2026 · <a href="https://www.nezzazvoni.cz/pruzkumy-a-data/" target="_blank" rel="noopener">nezzazvoni.cz/pruzkumy-a-data</a></p>
-  </div>
-</section>
-
-<!-- /// divider -->
-<div class="divider" aria-hidden="true">
-  <div class="divider-inner">/// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// ///</div>
-</div>
-
-<!-- ===== 3. TŘI PILÍŘE ===== -->
-<section id="pillars">
-  <div class="polygon polygon-pillars polygon">
-    <svg viewBox="0 0 350 350" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="175,15 340,110 300,320 50,320 10,110" fill="rgba(201,232,251,0.05)" stroke="rgba(201,232,251,0.1)" stroke-width="1"/>
-    </svg>
-  </div>
-
-  <div class="container">
-    <div class="fade-in">
-      <p class="section-label">Co nabízíme</p>
-      <h2 class="section-heading" style="color: var(--white)">Tři pilíře, které <span class="accent">fungují.</span></h2>
-    </div>
-
-    <div class="pillars-grid fade-in-children">
-      <div class="pillar-card">
-        <div class="pillar-number">01</div>
-        <h3>Pochopte je</h3>
-        <p>Najděte s generací Z společnou řeč, zjistěte, co je motivuje a jaká jsou jejich očekávání.</p>
-        <div class="pillar-services">
-          <a href="#formats" class="pillar-service-badge">Keynote</a>
-          <a href="#formats" class="pillar-service-badge">Workshop</a>
-        </div>
-      </div>
-      <div class="pillar-card">
-        <div class="pillar-number">02</div>
-        <h3>Získejte je</h3>
-        <p>Jak zaujmout nastupující pracovní sílu, kde figurovat, aby si vás všimli a chtěli k vám.</p>
-        <div class="pillar-services">
-          <a href="#formats" class="pillar-service-badge">Workshop</a>
-          <a href="#formats" class="pillar-service-badge">Konzultace</a>
-        </div>
-      </div>
-      <div class="pillar-card">
-        <div class="pillar-number">03</div>
-        <h3>Udržte si je</h3>
-        <p>Jaké jsou kroky k udržení zaměstnanců, jak snížit fluktuaci a zvýšit motivaci.</p>
-        <div class="pillar-services">
-          <a href="#formats" class="pillar-service-badge">Konzultace</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- /// divider -->
-<div class="divider divider--dark" aria-hidden="true">
-  <div class="divider-inner">/// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// ///</div>
-</div>
-
-<!-- ===== 4. PRO KOHO ===== -->
-<section id="audience">
-  <div class="polygon polygon-audience polygon">
-    <svg viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="140,10 270,90 240,260 40,260 10,90" fill="rgba(4,25,60,0.04)" stroke="rgba(4,25,60,0.08)" stroke-width="1"/>
-    </svg>
-  </div>
-
-  <div class="container">
-    <div class="fade-in">
-      <p class="section-label">Pro koho</p>
-      <h2 class="section-heading">Pomáháme všude, kde pracují <span class="accent">mladí.</span></h2>
-    </div>
-
-    <div class="audience-grid fade-in-children">
-      <div class="audience-card">
-        <span class="audience-icon" aria-hidden="true">&#9881;</span>
-        <h3>Výrobní firmy</h3>
-        <p>Nábor technických pozic, kde mladí chybí nejvíc.</p>
-      </div>
-      <div class="audience-card">
-        <span class="audience-icon" aria-hidden="true">&#9878;</span>
-        <h3>Banky a korporáty</h3>
-        <p>Retence mladých talentů a snížení fluktuace.</p>
-      </div>
-      <div class="audience-card">
-        <span class="audience-icon" aria-hidden="true">&#9829;</span>
-        <h3>Nemocnice a státní sektor</h3>
-        <p>Proč mladí utíkají a jak je přesvědčit zůstat.</p>
-      </div>
-      <div class="audience-card">
-        <span class="audience-icon" aria-hidden="true">&#9734;</span>
-        <h3>Vysoké školy</h3>
-        <p>Jak oslovit a udržet studenty v oboru.</p>
-      </div>
-      <div class="audience-card">
-        <span class="audience-icon" aria-hidden="true">&#9650;</span>
-        <h3>Stavebnictví a logistika</h3>
-        <p>Obory s největším nedostatkem mladé pracovní síly.</p>
-      </div>
-      <div class="audience-card">
-        <span class="audience-icon" aria-hidden="true">&#9632;</span>
-        <h3>Veřejná správa</h3>
-        <p>Odvětví, které prochází modernizací a digitalizací.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- /// divider -->
-<div class="divider divider--light-blue" aria-hidden="true">
-  <div class="divider-inner">/// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// ///</div>
-</div>
-
-<!-- ===== 5. PROČ MY ===== -->
-<section id="why">
-  <div class="polygon polygon-why polygon">
-    <svg viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="160,12 310,100 280,300 40,300 10,100" fill="var(--poly-blue)" stroke="var(--poly-stroke)" stroke-width="1"/>
-    </svg>
-  </div>
-
-  <div class="container">
-    <div class="fade-in">
-      <p class="section-label">Proč my</p>
-      <h2 class="section-heading section-heading--no-margin">15 let mezi mladými.<br>To je naše <span class="accent">výhoda.</span></h2>
-      <p class="why-claim fade-in">15 let · 20+ průzkumů · 10 000+ respondentů · 500+ škol</p>
-    </div>
-
-    <div class="why-grid">
-      <div class="why-stats fade-in-children">
-        <div class="why-stat">
-          <div class="big">15 let</div>
-          <p>ve vzdělávání a práci s generací Z</p>
-        </div>
-        <div class="why-stat">
-          <div class="big">500+ škol</div>
-          <p>po celé České republice</p>
-        </div>
-        <div class="why-stat">
-          <div class="big">Tisíce</div>
-          <p>proškolených učitelů a firemních manažerů</p>
-        </div>
-        <div class="why-stat">
-          <div class="big">Unikátní data</div>
-          <p>přímý přístup k datům, která nikdo jiný nemá</p>
-        </div>
-      </div>
-
-      <div class="why-infobox fade-in">
-        <strong>Od 2017 sbíráme data přímo od desítek tisíc mladých lidí.</strong> Nepřebíráme zahraniční trendy — máme vlastní.
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- /// divider -->
-<div class="divider" aria-hidden="true">
-  <div class="divider-inner">/// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// ///</div>
-</div>
-
-<!-- ===== 6. FORMÁTY ===== -->
-<section id="formats">
-  <div class="polygon polygon-formats polygon">
-    <svg viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="150,10 290,90 260,280 40,280 10,90" fill="rgba(201,232,251,0.05)" stroke="rgba(201,232,251,0.1)" stroke-width="1"/>
-    </svg>
-  </div>
-
-  <div class="container">
-    <div class="fade-in">
-      <p class="section-label">Formáty spolupráce</p>
-      <h2 class="section-heading" style="color: var(--white)">Vyberte si, co vám <span class="accent">sedí.</span></h2>
-    </div>
-
-    <div class="formats-list fade-in-children">
-      <div class="format-item">
-        <div class="format-tag">60–90 min</div>
-        <h3>Keynote</h3>
-        <p>Přednáška pro konference a firemní akce. Inspirativní, datově podložená, na míru vašemu publiku.</p>
-      </div>
-      <div class="format-item">
-        <div class="format-tag">240 minut</div>
-        <h3>Workshop</h3>
-        <p>Komplexnější představení problematiky, praktické nástroje a techniky, které můžete začít využívat.</p>
-      </div>
-      <div class="format-item format-item--wide">
-        <div class="format-tag">Individuální</div>
-        <h3>Konzultace</h3>
-        <p>Přímá práce s vaším týmem nebo vedením. Vyberte si formu, která vám sedí:</p>
-        <ul class="format-list format-list--cols">
-          <li><strong>Strategická konzultace (3 h)</strong> — analýza vaší situace + konkrétní doporučení</li>
-          <li><strong>Employer branding audit (1 den)</strong> — kompletní zhodnocení komunikace navenek</li>
-          <li><strong>Něco jiného?</strong> Ozvěte se a připravíme řešení na míru.</li>
+    <div class="formats">
+      <article class="format">
+        <header>
+          <span class="format__time">60–90 min</span>
+          <h3>Keynote</h3>
+        </header>
+        <p>Inspirativní přednáška pro konference, leadership setkání nebo firemní akce. Datově podložená, šitá na míru publiku.</p>
+        <ul class="format__meta">
+          <li><span>Pro</span> 50–500 osob</li>
+          <li><span>Forma</span> prezenčně i online</li>
+          <li><span>Výstup</span> shrnutí + Q&A</li>
         </ul>
-      </div>
+      </article>
+
+      <article class="format format--featured">
+        <header>
+          <span class="format__time">240 min</span>
+          <h3>Workshop</h3>
+          <span class="format__pin">Nejžádanější</span>
+        </header>
+        <p>Komplexní představení problematiky a praktické nástroje, které můžete začít používat hned. Interaktivní cvičení s vaším týmem.</p>
+        <ul class="format__meta">
+          <li><span>Pro</span> 8–30 osob</li>
+          <li><span>Forma</span> prezenčně</li>
+          <li><span>Výstup</span> playbook + akční plán</li>
+        </ul>
+      </article>
+
+      <article class="format">
+        <header>
+          <span class="format__time">3 h / 1 den / dle potřeby</span>
+          <h3>Konzultace</h3>
+        </header>
+        <p>Přímá práce s vaším vedením nebo HR týmem. Tři osvědčené formáty, případně kombinace na míru.</p>
+        <ul class="format__sublist">
+          <li><strong>Strategická konzultace · 3 h</strong><span>Analýza situace + konkrétní doporučení</span></li>
+          <li><strong>Employer branding audit · 1 den</strong><span>Kompletní zhodnocení komunikace navenek</span></li>
+          <li><strong>Mentoring vedení · průběžně</strong><span>Pravidelné sezení s manažery</span></li>
+        </ul>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- /// divider -->
-<div class="divider divider--dark" aria-hidden="true">
-  <div class="divider-inner">/// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// ///</div>
-</div>
+<div class="strip strip--dark" aria-hidden="true"><div class="strip__track"></div></div>
 
-<!-- ===== 7. KONTAKT ===== -->
-<section id="contact">
-  <div class="polygon polygon-contact polygon">
-    <svg viewBox="0 0 260 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="130,10 250,80 220,240 40,240 10,80" fill="var(--poly-blue)" stroke="var(--poly-stroke)" stroke-width="1"/>
-    </svg>
-  </div>
+<!-- ============== KONTAKT ============== -->
+<section id="contact" class="section section--light">
+  <div class="container contact">
+    <div class="contact__intro">
+      <span class="eyebrow"><span class="eyebrow__num">/ 06</span> Kontakt</span>
+      <h2 class="display">
+        Pojďme se <em class="ital">pobavit.</em>
+      </h2>
+      <p class="section__lede">
+        Napište nám pár vět o vaší situaci. Ozveme se do 24 hodin pracovních dní s
+        návrhem dalšího kroku – bez prezentačních koleček.
+      </p>
 
-  <div class="container">
-    <div class="contact-grid">
-      <div class="contact-info fade-in">
-        <p class="section-label">Kontakt</p>
-        <h2>Pojďme se <span class="accent">bavit.</span></h2>
-        <p>Napište nám a ozveme se do 24 hodin. Nebo zavolejte - rádi si popovídáme.</p>
-
-        <div class="contact-direct">
-          <a href="mailto:info@nezzazvoni.cz">
-            <span class="icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#04193c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-10 8L2 4"/></svg>
-            </span>
-            info@nezzazvoni.cz
-          </a>
-          <a href="https://nezzazvoni.cz" target="_blank" rel="noopener">
-            <span class="icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#04193c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 010 20 15 15 0 010-20z"/></svg>
-            </span>
-            nezzazvoni.cz
-          </a>
+      <article class="person">
+        <img class="person__photo" src="assets/dominik.png" alt="Ing. Dominik Záluský" width="160" height="160" loading="lazy" />
+        <div class="person__body">
+          <span class="person__role">Váš první kontakt</span>
+          <h3 class="person__name">Ing. Dominik Záluský</h3>
+          <p class="person__title">Konzultant</p>
+          <ul class="person__contact">
+            <li><a href="mailto:zalusky@nezzazvoni.cz">zalusky@nezzazvoni.cz</a></li>
+            <li><a href="tel:+420737478508">+420 737 478 508</a></li>
+          </ul>
         </div>
+      </article>
+
+      <ul class="contact__direct">
+        <li>
+          <span class="contact__label">Email</span>
+          <a href="mailto:info@nezzazvoni.cz">info@nezzazvoni.cz</a>
+        </li>
+        <li>
+          <span class="contact__label">Telefon</span>
+          <a href="tel:+420773977508">+420 773 977 508</a>
+        </li>
+        <li>
+          <span class="contact__label">Web</span>
+          <a href="https://nezzazvoni.cz" target="_blank" rel="noopener">nezzazvoni.cz</a>
+        </li>
+        <li>
+          <span class="contact__label">LinkedIn</span>
+          <a href="https://www.linkedin.com/company/nez-zazvoni" target="_blank" rel="noopener">/nez-zazvoni</a>
+        </li>
+      </ul>
+    </div>
+
+    <form class="contact__form" id="contactForm" action="https://formspree.io/f/mnjlywbe" method="POST" novalidate>
+      <div class="field">
+        <label for="name">Jméno a příjmení</label>
+        <input type="text" id="name" name="name" required autocomplete="name" placeholder="Jan Novák" />
       </div>
-
-      <form class="contact-form fade-in" id="contactForm" action="https://formspree.io/f/mnjlywbe" method="POST">
-        <div class="form-group">
-          <label for="name">Jméno</label>
-          <input type="text" id="name" name="name" required placeholder="Jan Novák">
-        </div>
-        <div class="form-group">
+      <div class="field-row">
+        <div class="field">
           <label for="company">Firma</label>
-          <input type="text" id="company" name="company" placeholder="Název společnosti">
+          <input type="text" id="company" name="company" autocomplete="organization" placeholder="Název společnosti" />
         </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required placeholder="jan@firma.cz">
+        <div class="field">
+          <label for="role">Pozice</label>
+          <input type="text" id="role" name="role" placeholder="HR ředitel/ka" />
         </div>
-        <div class="form-group">
-          <label for="message">Zpráva</label>
-          <textarea id="message" name="message" placeholder="Jak vám můžeme pomoci?"></textarea>
-        </div>
-        <button type="submit" class="btn-primary form-submit">Odeslat zprávu</button>
-      </form>
-    </div>
+      </div>
+      <div class="field">
+        <label for="email">Pracovní email</label>
+        <input type="email" id="email" name="email" required autocomplete="email" placeholder="jan@firma.cz" />
+      </div>
+      <fieldset class="field field--radios">
+        <legend>O co máte zájem?</legend>
+        <label><input type="checkbox" name="interest" value="keynote" /><span>Keynote</span></label>
+        <label><input type="checkbox" name="interest" value="workshop" /><span>Workshop</span></label>
+        <label><input type="checkbox" name="interest" value="konzultace" /><span>Konzultace</span></label>
+        <label><input type="checkbox" name="interest" value="audit" /><span>Audit</span></label>
+        <label><input type="checkbox" name="interest" value="nevim" /><span>Zatím nevím</span></label>
+      </fieldset>
+      <div class="field">
+        <label for="message">Krátký kontext</label>
+        <textarea id="message" name="message" rows="4" placeholder="V čem řešíte největší tlak – nábor, retence, employer branding…"></textarea>
+      </div>
+      <button type="submit" class="btn btn--primary btn--block">
+        Odeslat poptávku
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </button>
+      <p class="form__legal">Odesláním souhlasíte se zpracováním údajů pro účely vyřízení poptávky. <a href="https://nezzazvoni.cz" target="_blank" rel="noopener">Více</a>.</p>
+    </form>
   </div>
 </section>
 
-<!-- ===== 8. FOOTER ===== -->
-<footer>
-  <div class="container">
-    <div class="footer-inner">
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <span class="brand__word">generace<span class="brand__dot">.</span>work</span>
+      <p>Projekt Než zazvoní, s.r.o. – pomáháme firmám rozumět generaci, kterou potřebují.</p>
+    </div>
+    <nav class="footer__nav" aria-label="Patička">
       <div>
-        <div class="footer-brand">generace<span>.</span>work</div>
-        <div class="footer-meta" style="margin-top: 8px;">&copy; 2026 generace.work | Projekt Než zazvoní, s.r.o.</div>
+        <h4>Stránky</h4>
+        <a href="#problem">Kontext</a>
+        <a href="#offer">Co děláme</a>
+        <a href="#why">Proč my</a>
+        <a href="#formats">Formáty</a>
+        <a href="#contact">Kontakt</a>
       </div>
-      <div class="footer-links">
+      <div>
+        <h4>Než zazvoní</h4>
         <a href="https://nezzazvoni.cz" target="_blank" rel="noopener">nezzazvoni.cz</a>
+        <a href="https://www.nezzazvoni.cz/pruzkumy-a-data/" target="_blank" rel="noopener">Průzkumy a data</a>
         <a href="https://www.linkedin.com/company/nez-zazvoni" target="_blank" rel="noopener">LinkedIn</a>
       </div>
-    </div>
-    <div class="powered-by">Powered by Než zazvoní - 15 let zkušeností ve vzdělávání</div>
+      <div>
+        <h4>Kontakt</h4>
+        <a href="mailto:info@nezzazvoni.cz">info@nezzazvoni.cz</a>
+        <a href="tel:+420773977508">+420 773 977 508</a>
+      </div>
+    </nav>
+  </div>
+  <div class="footer__base">
+    <span>© 2026 Než zazvoní, s.r.o. · IČO 03741561</span>
+    <span>generace.work</span>
   </div>
 </footer>
 
 <script>
-  // ===== SMOOTH SCROLL =====
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+// app.js – vanilla JS pro generace.work
+
+(function() {
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    if (window.scrollY > 40) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Mobile menu (jednoduché – toggle .nav__links display)
+  const menuBtn = document.querySelector('.nav__menu');
+  const links = document.querySelector('.nav__links');
+  if (menuBtn && links) {
+    menuBtn.addEventListener('click', () => {
+      const open = links.classList.toggle('is-open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (open) {
+        links.style.display = 'flex';
+        links.style.position = 'absolute';
+        links.style.top = '100%';
+        links.style.left = '0';
+        links.style.right = '0';
+        links.style.background = 'rgba(4,25,60,0.98)';
+        links.style.flexDirection = 'column';
+        links.style.padding = '20px 32px';
+        links.style.gap = '16px';
+        links.style.borderTop = '1px solid rgba(255,255,255,0.08)';
+      } else {
+        links.removeAttribute('style');
+      }
+    });
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      if (window.innerWidth < 980) {
+        links.classList.remove('is-open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        links.removeAttribute('style');
+      }
+    }));
+  }
+
+  // Reveal on scroll
+  const targets = document.querySelectorAll('.section__head, .dataviz, .pillars, .audience, .why, .formats, .contact, .source, .callout');
+  targets.forEach(t => t.classList.add('reveal'));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  targets.forEach(t => io.observe(t));
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href');
+      if (id.length > 1) {
+        const t = document.querySelector(id);
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
       }
     });
   });
 
-  // ===== NAV SCROLL EFFECT =====
-  const nav = document.getElementById('nav');
-  let lastScroll = 0;
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 60) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
-  }, { passive: true });
+  // Form
+  const form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      const orig = btn.innerHTML;
+      btn.innerHTML = 'Odesílám…';
+      btn.disabled = true;
+      try {
+        const fd = new FormData(form);
+        const r = await fetch(form.action, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } });
+        if (r.ok) {
+          form.innerHTML = '<div style="padding:32px 12px;text-align:center"><h3 style="font-size:1.5rem;margin-bottom:10px;font-weight:800;letter-spacing:-.01em">Děkujeme!</h3><p style="color:var(--ink-60);line-height:1.6">Zpráva dorazila. Ozveme se do 24 hodin pracovních dní.</p></div>';
+        } else throw new Error();
+      } catch {
+        btn.innerHTML = orig; btn.disabled = false;
+        alert('Něco se nepodařilo. Napište nám prosím přímo na info@nezzazvoni.cz.');
+      }
+    });
+  }
 
-  // ===== FADE-IN ON SCROLL =====
-  document.documentElement.classList.add('js-ready');
+  // ============== TWEAKS ==============
+  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "heroCopy": "default",
+    "statsMode": "big",
+    "accent": "red",
+    "audienceMode": "cards"
+  }/*EDITMODE-END*/;
 
-  const observerOptions = {
-    threshold: 0.15,
-    rootMargin: '0px 0px -40px 0px'
+  let state = { ...TWEAK_DEFAULTS };
+
+  // Build panel
+  const panel = document.createElement('aside');
+  panel.className = 'tweaks';
+  panel.setAttribute('role', 'region');
+  panel.setAttribute('aria-label', 'Tweaks');
+  panel.innerHTML = `
+    <header class="tweaks__head">
+      <span class="tweaks__title">Tweaks</span>
+      <button class="tweaks__close" type="button" aria-label="Zavřít">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </header>
+    <div class="tweaks__body">
+      <div class="tweaks__group" data-tweak="heroCopy">
+        <span class="tweaks__label">Hero copy</span>
+        <div class="tweaks__seg">
+          <button data-v="default">Výchozí</button>
+          <button data-v="punch">Údernější</button>
+          <button data-v="problem">Problémově</button>
+        </div>
+      </div>
+      <div class="tweaks__group" data-tweak="statsMode">
+        <span class="tweaks__label">Vizualizace stats</span>
+        <div class="tweaks__seg">
+          <button data-v="bars">Bary</button>
+          <button data-v="big">Velká čísla</button>
+          <button data-v="minimal">Minimal</button>
+        </div>
+      </div>
+      <div class="tweaks__group" data-tweak="audienceMode">
+        <span class="tweaks__label">Pro koho – layout</span>
+        <div class="tweaks__seg">
+          <button data-v="list">Seznam</button>
+          <button data-v="cards">Karty</button>
+        </div>
+      </div>
+      <div class="tweaks__group" data-tweak="accent">
+        <span class="tweaks__label">Akcent</span>
+        <div class="tweaks__seg">
+          <button data-v="red">Červená</button>
+          <button data-v="orange">Oranžová</button>
+        </div>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(panel);
+
+  const heroLead = document.querySelector('[data-hero-copy]');
+  const HERO_COPIES = {
+    default: 'Pomůžeme vám ji <em class="ital">pochopit</em>, <em class="ital">získat</em> i <em class="ital">udržet</em>. Stavíme na 15 letech vlastních dat z českého prostředí – ne na zahraničních trendech.',
+    punch: 'Vaši nejmladší lidé odcházejí dřív, než se stačí zaučit. <em class="ital">Známe důvod.</em> A umíme to změnit.',
+    problem: 'Průměrný Gen Z odchází z první práce po 11 měsících. <em class="ital">Tomu se dá předejít</em> – pokud rozumíte, co vlastně chtějí.'
   };
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
+  const dataviz = document.querySelector('.dataviz');
+  // pre-fill data-big atributy pro režim "Velká čísla"
+  if (dataviz) {
+    const cards = dataviz.querySelectorAll('.dataviz__card .dataviz__body');
+    const bigs = ['73 %', '11 měs.', '30 %'];
+    cards.forEach((b, i) => b.setAttribute('data-big', bigs[i] || ''));
+  }
 
-  document.querySelectorAll('.fade-in, .fade-in-children').forEach(el => {
-    observer.observe(el);
-  });
-
-  // ===== CONTACT FORM (Formspree async) =====
-  document.getElementById('contactForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const form = e.target;
-    const button = form.querySelector('button[type="submit"]');
-    const originalText = button.textContent;
-    button.textContent = 'Odesílám...';
-    button.disabled = true;
-
-    try {
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
+  function applyState() {
+    if (heroLead && HERO_COPIES[state.heroCopy]) {
+      heroLead.innerHTML = HERO_COPIES[state.heroCopy];
+    }
+    if (dataviz) dataviz.setAttribute('data-stats-mode', state.statsMode);
+    const audienceEl = document.querySelector('.audience');
+    if (audienceEl) audienceEl.setAttribute('data-audience-mode', state.audienceMode);
+    if (state.accent === 'orange') {
+      document.documentElement.style.setProperty('--red', '#ffa000');
+      document.documentElement.style.setProperty('--red-deep', '#e58e00');
+    } else {
+      document.documentElement.style.setProperty('--red', '#f0324b');
+      document.documentElement.style.setProperty('--red-deep', '#d92340');
+    }
+    // visual state on buttons
+    panel.querySelectorAll('.tweaks__group').forEach(g => {
+      const key = g.getAttribute('data-tweak');
+      g.querySelectorAll('button').forEach(b => {
+        b.classList.toggle('is-active', b.getAttribute('data-v') === state[key]);
       });
-      if (response.ok) {
-        form.innerHTML = '<div style="padding: 40px 20px; text-align: center; color: var(--navy);"><h3 style="font-size: 1.4rem; margin-bottom: 12px;">Děkujeme!</h3><p>Zpráva dorazila. Ozveme se do 24 hodin.</p></div>';
-      } else {
-        throw new Error('Form submission failed');
-      }
-    } catch (err) {
-      button.textContent = originalText;
-      button.disabled = false;
-      alert('Něco se nepodařilo. Napište nám prosím přímo na info@nezzazvoni.cz.');
+    });
+  }
+
+  panel.addEventListener('click', (e) => {
+    const btn = e.target.closest('.tweaks__seg button');
+    if (btn) {
+      const group = btn.closest('.tweaks__group');
+      const key = group.getAttribute('data-tweak');
+      const v = btn.getAttribute('data-v');
+      state[key] = v;
+      applyState();
+      try {
+        window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { [key]: v } }, '*');
+      } catch {}
+    }
+    if (e.target.closest('.tweaks__close')) {
+      panel.classList.remove('is-open');
+      try { window.parent.postMessage({ type: '__edit_mode_dismissed' }, '*'); } catch {}
     }
   });
+
+  window.addEventListener('message', (e) => {
+    const d = e.data;
+    if (!d || typeof d !== 'object') return;
+    if (d.type === '__activate_edit_mode') panel.classList.add('is-open');
+    if (d.type === '__deactivate_edit_mode') panel.classList.remove('is-open');
+  });
+
+  applyState();
+  try { window.parent.postMessage({ type: '__edit_mode_available' }, '*'); } catch {}
+})();
+
 </script>
 
 </body>
