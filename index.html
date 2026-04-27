@@ -354,6 +354,9 @@
       max-width: 700px;
       letter-spacing: -0.5px;
     }
+    .section-heading--no-margin {
+      margin-bottom: 8px;
+    }
 
     .stats-grid {
       display: grid;
@@ -492,25 +495,27 @@
     }
 
     .why-claim {
-      margin-top: 8px;
       font-family: 'Sanchez', serif;
       font-style: italic;
       font-size: 1.05rem;
       color: var(--red);
+      margin-bottom: 56px;
     }
 
     .why-infobox {
-      margin-top: 32px;
-      padding: 22px 26px;
-      background: rgba(201, 232, 251, 0.08);
+      margin-top: 56px;
+      max-width: 720px;
+      padding: 24px 28px;
+      background: rgba(4, 25, 60, 0.04);
       border-left: 3px solid var(--orange);
       border-radius: 4px;
       font-size: 1rem;
       line-height: 1.65;
-      color: rgba(255, 255, 255, 0.85);
+      color: rgba(4, 25, 60, 0.75);
     }
     .why-infobox strong {
-      color: var(--white);
+      color: var(--navy);
+      font-weight: 700;
     }
 
     /* ===== PRO KOHO ===== */
@@ -1215,7 +1220,7 @@
   <div class="container">
     <div class="fade-in">
       <p class="section-label">Proč my</p>
-      <h2 class="section-heading">15 let mezi mladými.<br>To je naše <span class="accent">výhoda.</span></h2>
+      <h2 class="section-heading section-heading--no-margin">15 let mezi mladými.<br>To je naše <span class="accent">výhoda.</span></h2>
       <p class="why-claim fade-in">15 let · 20+ průzkumů · 10 000+ respondentů · 500+ škol</p>
     </div>
 
@@ -1237,11 +1242,6 @@
           <div class="big">Unikátní data</div>
           <p>přímý přístup k datům, která nikdo jiný nemá</p>
         </div>
-      </div>
-
-      <div class="why-quote fade-in">
-        <blockquote>Učíme z&nbsp;dat a z&nbsp;tisíců hodin ve třídách a&nbsp;firmách — ne z&nbsp;knih.</blockquote>
-        <cite>— Jakub Roh, zakladatel Než zazvoní</cite>
       </div>
 
       <div class="why-infobox fade-in">
