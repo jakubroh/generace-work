@@ -694,6 +694,9 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 32px;
       }
+      .format-item--wide {
+        grid-column: 1 / -1;
+      }
     }
 
     .format-item {
@@ -745,6 +748,29 @@
     }
     .format-list li:first-child {
       border-top: none;
+    }
+
+    @media (min-width: 768px) {
+      .format-list--cols {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0 24px;
+      }
+      .format-list--cols li {
+        border-top: none;
+        border-left: 1px solid rgba(255,255,255,0.08);
+        padding: 4px 0 4px 18px;
+      }
+      .format-list--cols li:first-child {
+        border-left: none;
+        padding-left: 16px;
+      }
+      .format-list--cols li::before {
+        left: 0;
+      }
+      .format-list--cols li:first-child::before {
+        left: 0;
+      }
     }
     .format-list li::before {
       content: "•";
@@ -1255,11 +1281,11 @@
         <h3>Workshop</h3>
         <p>Komplexnější představení problematiky, praktické nástroje a techniky, které můžete začít využívat.</p>
       </div>
-      <div class="format-item">
+      <div class="format-item format-item--wide">
         <div class="format-tag">Individuální</div>
         <h3>Konzultace</h3>
         <p>Přímá práce s vaším týmem nebo vedením. Vyberte si formu, která vám sedí:</p>
-        <ul class="format-list">
+        <ul class="format-list format-list--cols">
           <li><strong>Strategická konzultace (3 h)</strong> — analýza vaší situace + konkrétní doporučení</li>
           <li><strong>Employer branding audit (1 den)</strong> — kompletní zhodnocení komunikace navenek</li>
           <li><strong>Něco jiného?</strong> Ozvěte se a připravíme řešení na míru.</li>
